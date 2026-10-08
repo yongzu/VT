@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Camera RAW (용량이 커서 별도 백업)
+*.cr2
+*.CR2
+*.cr3
+*.CR3
+*.nef
+*.NEF
+*.arw
+*.ARW
+*.dng
+*.DNG
+*.raf
+*.RAF
+*.orf
+*.ORF
+*.rw2
+*.RW2
+
+# Lightroom / Photoshop 임시 파일
+*.lrcat-data/
+*.lrdata/
+*.tmp
+~$*
