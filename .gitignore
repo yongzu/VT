@@ -26,3 +26,6 @@ desktop.ini
 *.lrdata/
 *.tmp
 ~$*
+
+# 저작권 자료(전시 작품 촬영본, 강의 자료 등) — 로컬에만 보관
+private/
