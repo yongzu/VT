@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>21°C — v02 Today curve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  /* 시안 B — 오른쪽 레퍼런스(파란 하늘 + 온도 곡선) 응용
+     위·아래는 시원한 실내 공기, 가운데 띠만 뜨거운 바깥 사진 */
+  :root {
+    --sky-top: #0B3DD8;
+    --sky-mid: #2A6FE8;
+    --sky-pale: #9DB8FF;
+    --haze: #DCD8F2;
+    --ink: #1A3CC0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; }
+  .cover {
+    position: relative; width: 1500px; height: 1500px; overflow: hidden;
+    font-family: "Inter", sans-serif; color: #fff; background: var(--sky-top);
+  }
+  .photo {
+    position: absolute; width: 1680px; height: 1680px; left: -150px; top: 70px;
+    filter: saturate(1.5) contrast(1.1) brightness(1.04);
+  }
+  .heat {
+    position: absolute; inset: 0; mix-blend-mode: soft-light;
+    background: radial-gradient(55% 40% at 52% 58%, rgba(255, 100, 0, .6), rgba(255, 60, 0, 0) 80%);
+  }
+  .sky {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, var(--sky-top) 0%, #1A55E2 20%, rgba(42, 111, 232, .82) 30%, rgba(42, 111, 232, 0) 46%);
+  }
+  .floor {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, var(--haze) 0%, rgba(220, 216, 242, .94) 12%, rgba(170, 190, 245, .55) 24%, rgba(130, 165, 240, 0) 38%);
+  }
+  .bar { position: absolute; top: 54px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 18px; font-size: 40px; font-weight: 500; }
+  .badge { background: #fff; color: var(--sky-top); font-weight: 700; border-radius: 8px; padding: 2px 12px; font-size: 38px; }
+  .more { position: absolute; right: 64px; top: 46px; font-size: 56px; letter-spacing: 4px; font-weight: 700; }
+  .title { position: absolute; top: 150px; left: 0; right: 0; text-align: center; }
+  .title h1 { font-size: 132px; font-weight: 700; letter-spacing: -.035em; line-height: 1; }
+  .title p { margin-top: 14px; font-size: 44px; font-weight: 600; color: var(--sky-pale); }
+  .curve { position: absolute; inset: 0; }
+  .curve text { font-family: "Inter", sans-serif; }
+  .tracks {
+    position: absolute; left: 140px; right: 140px; bottom: 70px;
+    display: grid; grid-template-columns: 1fr 1fr; column-gap: 60px; row-gap: 12px;
+    color: var(--ink); font-size: 25px; font-weight: 500;
+  }
+  .tracks span { color: rgba(26, 60, 192, .55); margin-right: 12px; font-variant-numeric: tabular-nums; }
+  .tracks em { font-style: normal; color: rgba(26, 60, 192, .62); }
+  .genre { position: absolute; left: 0; right: 0; bottom: 250px; text-align: center; color: var(--ink); font-size: 26px; font-weight: 600; letter-spacing: .02em; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <img class="photo" src="../photos/11.jpg" alt="">
+  <div class="heat"></div>
+  <div class="sky"></div>
+  <div class="floor"></div>
+
+  <div class="bar">14.21 <span class="badge">−13</span></div>
+  <div class="more">•••</div>
+  <div class="title">
+    <h1>21°C</h1>
+    <p>Air-conditioned, Seoul</p>
+  </div>
+
+  <svg class="curve" viewBox="0 0 1500 1500">
+    <!-- 바깥(지나온 시간, 뜨거움) 점선이 떨어져 실내 21°에 닿고, 이후는 평평하게 유지 -->
+    <path d="M -10 320 C 100 322, 200 390, 262 448" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="16 12"/>
+    <path d="M 342 478 C 700 530, 1150 525, 1510 520" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="3"/>
+    <text x="300" y="338" text-anchor="middle" font-size="34" font-weight="600" fill="#9DB8FF">Inside</text>
+    <text x="300" y="380" text-anchor="middle" font-size="36" font-weight="600" fill="#fff">14.21</text>
+    <line x1="300" y1="396" x2="300" y2="418" stroke="#fff" stroke-width="2" stroke-dasharray="4 5"/>
+    <line x1="300" y1="910" x2="300" y2="516" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-dasharray="4 6"/>
+    <circle cx="300" cy="470" r="44" fill="#fff"/>
+    <text x="304" y="483" text-anchor="middle" font-size="36" font-weight="700" fill="var(--sky-top)">21°</text>
+  </svg>
+
+  <div class="genre">House Music Compilation · 6 Tracks</div>
+  <div class="tracks">
+    <div><span>01</span>Headlock <em>— Lucy Gang</em></div>
+    <div><span>04</span>What You Like <em>— Logic1000</em></div>
+    <div><span>02</span>Rhythm Variation 06 <em>— AOKI takamasa</em></div>
+    <div><span>05</span>LesAlpx <em>— Floating Points</em></div>
+    <div><span>03</span>More Than a Woman <em>— Kelly Lee Owens</em></div>
+    <div><span>06</span>Citta <em>— Cousin</em></div>
+  </div>
+</div>
+</body>
+</html>

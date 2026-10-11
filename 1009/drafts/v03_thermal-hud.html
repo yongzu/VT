@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>21°C — v03 Thermal HUD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+  /* 시안 C — 열화상 + 에어컨 설정 온도
+     사진은 열화상 팔레트(덥게), 계측 UI와 21°C는 얼음색으로 선명하게(시원하게) */
+  :root {
+    --ice: #D9F4FF;
+    --cyan: #7FD8FF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; }
+  .cover {
+    position: relative; width: 1500px; height: 1500px; overflow: hidden;
+    font-family: "JetBrains Mono", monospace; color: var(--ice); background: #000;
+  }
+  .photo {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    filter: contrast(1.15) url(#thermal) blur(1.2px);
+  }
+  .shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 10, .78) 0%, rgba(0, 0, 10, .35) 26%, rgba(0, 0, 10, 0) 42%); }
+  .grain { position: absolute; inset: 0; opacity: .16; mix-blend-mode: overlay; }
+  .mark { position: absolute; left: 56px; top: 56px; width: 64px; height: 64px; }
+  .genre { position: absolute; left: 150px; top: 72px; font-family: "Inter", sans-serif; font-weight: 500; font-size: 30px; }
+  .tracks { position: absolute; right: 56px; top: 64px; text-align: right; font-size: 19px; line-height: 1.65; }
+  .tracks span { color: var(--cyan); }
+  .hud { position: absolute; inset: 0; }
+  .hud text { font-family: "JetBrains Mono", monospace; fill: var(--ice); }
+  .set { position: absolute; left: 66px; bottom: 470px; font-size: 26px; letter-spacing: .08em; color: var(--cyan); }
+  .big {
+    position: absolute; left: 30px; bottom: -150px;
+    font-family: "Inter", sans-serif; font-weight: 700; font-size: 640px; letter-spacing: -.06em; line-height: 1;
+    color: var(--ice);
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <!-- 밝기 → 열화상 팔레트(검정·남색·자주·빨강·주황·노랑·흰색) -->
+  <filter id="thermal" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".3 .55 .15 0 0  .3 .55 .15 0 0  .3 .55 .15 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.02 0.12 0.45 0.85 1 1 1"/>
+      <feFuncG type="table" tableValues="0.01 0.02 0.04 0.12 0.45 0.82 1"/>
+      <feFuncB type="table" tableValues="0.08 0.38 0.55 0.32 0.04 0.15 0.85"/>
+    </feComponentTransfer>
+  </filter>
+  <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/></filter>
+</svg>
+<div class="cover">
+  <img class="photo" src="../photos/11.jpg" alt="">
+  <div class="shade"></div>
+  <svg class="grain" viewBox="0 0 1500 1500"><rect width="1500" height="1500" filter="url(#noise)"/></svg>
+
+  <!-- 사용자 시안의 픽셀 별 마크 -->
+  <svg class="mark" viewBox="0 0 9 9" fill="var(--ice)" shape-rendering="crispEdges">
+    <rect x="4" y="0" width="1" height="9"/><rect x="0" y="4" width="9" height="1"/>
+    <rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/>
+    <rect x="1" y="7" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/>
+  </svg>
+  <div class="genre">House Music</div>
+
+  <div class="tracks">
+    <span>01</span> Lucy Gang — Headlock<br>
+    <span>02</span> AOKI takamasa — Rhythm Variation 06<br>
+    <span>03</span> Kelly Lee Owens — More Than a Woman<br>
+    <span>04</span> Logic1000 — What You Like<br>
+    <span>05</span> Floating Points — LesAlpx<br>
+    <span>06</span> Cousin — Citta
+  </div>
+
+  <svg class="hud" viewBox="0 0 1500 1500">
+    <!-- 이마 조준점 -->
+    <g stroke="var(--ice)" stroke-width="2.5" fill="none">
+      <circle cx="760" cy="470" r="36"/>
+      <line x1="760" y1="414" x2="760" y2="440"/><line x1="760" y1="500" x2="760" y2="526"/>
+      <line x1="704" y1="470" x2="730" y2="470"/><line x1="790" y1="470" x2="816" y2="470"/>
+      <polyline points="704,470 660,430 470,430"/>
+    </g>
+    <text x="470" y="414" font-size="22" fill="var(--cyan)">MAX</text>
+    <text x="470" y="400" font-size="0">.</text>
+    <text x="530" y="414" font-size="36" font-weight="500">36.9°C</text>
+
+    <!-- 온도 스케일 -->
+    <defs>
+      <linearGradient id="scale" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff6d8"/><stop offset=".2" stop-color="#ffd23a"/>
+        <stop offset=".4" stop-color="#ff7a10"/><stop offset=".6" stop-color="#d81e4a"/>
+        <stop offset=".8" stop-color="#6a0a8c"/><stop offset="1" stop-color="#140530"/>
+      </linearGradient>
+    </defs>
+    <rect x="1414" y="330" width="16" height="560" fill="url(#scale)"/>
+    <g font-size="20" text-anchor="end">
+      <text x="1396" y="337">40</text>
+      <text x="1396" y="477">35</text>
+      <text x="1396" y="617">30</text>
+      <text x="1396" y="757">25</text>
+      <text x="1396" y="897">20</text>
+    </g>
+    <!-- 21° 지점 표시 (20→890, 1°=28px) -->
+    <polygon points="1444,862 1462,852 1462,872" fill="var(--cyan)"/>
+    <text x="1414" y="930" font-size="20" fill="var(--cyan)">SET</text>
+    <text x="40" y="40" font-size="0">.</text>
+  </svg>
+
+  <div class="set">❄ COOL · SET</div>
+  <div class="big">21°C</div>
+</div>
+</body>
+</html>

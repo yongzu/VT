@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>21°C — v01 Current weather</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=block" rel="stylesheet">
+<style>
+  /* 시안 A — 왼쪽 레퍼런스(모노 날씨 카드) 응용
+     사진은 덥게(채도·주황), 그래픽은 시원하게(얼음색 모노 + 위쪽 냉기 안개) */
+  :root {
+    --ice: #E9F7FF;
+    --cyan: #8FE3FF;
+    --ice-dim: rgba(233, 247, 255, .62);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; }
+  .cover {
+    position: relative; width: 1500px; height: 1500px; overflow: hidden;
+    font-family: "JetBrains Mono", monospace; color: var(--ice);
+  }
+  .photo {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(1.45) contrast(1.08) brightness(1.03);
+  }
+  .heat {
+    position: absolute; inset: 0; mix-blend-mode: soft-light;
+    background: radial-gradient(60% 55% at 58% 45%, rgba(255, 110, 0, .55), rgba(255, 60, 0, .25) 70%);
+  }
+  .vig { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0) 13%); }
+  /* 카드 = 에어컨이 켜진 실내. 위쪽부터 냉기가 내려온다 */
+  .card {
+    position: absolute; left: 80px; top: 80px; right: 80px; bottom: 80px;
+    border-radius: 40px; overflow: hidden;
+    box-shadow: inset 0 0 0 1.5px rgba(233, 247, 255, .28);
+  }
+  .fog {
+    position: absolute; inset: 0;
+    backdrop-filter: saturate(.15) brightness(1.12) blur(3px);
+    background: linear-gradient(180deg, rgba(175, 215, 245, .55), rgba(175, 215, 245, .28) 22%, rgba(175, 215, 245, 0) 44%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 18%, transparent 46%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 18%, transparent 46%);
+  }
+  .label { position: absolute; left: 70px; top: 70px; font-size: 30px; color: var(--ice); }
+  .temp {
+    position: absolute; left: 58px; top: 112px; font-size: 210px; font-weight: 300;
+    letter-spacing: -.04em; line-height: 1;
+  }
+  .meta { position: absolute; left: 70px; right: 70px; top: 352px; display: flex; justify-content: space-between; font-size: 32px; }
+  .meta span { display: inline-flex; align-items: center; gap: 12px; }
+  .meta svg { width: 34px; height: 34px; stroke: var(--ice); fill: none; stroke-width: 1.6; }
+
+  /* 차트: 트랙 6곡 = 6개 시점, 문을 연 순간 온도가 떨어진다 */
+  .chart { position: absolute; inset: 0; }
+  .chart text { font-family: "JetBrains Mono", monospace; fill: var(--ice); }
+  .shadow { text-shadow: 0 0 18px rgba(0, 20, 40, .35); }
+
+  .panel {
+    position: absolute; left: 40px; right: 40px; bottom: 40px; height: 330px;
+    border-radius: 28px; padding: 40px 44px;
+    background: rgba(12, 32, 48, .55);
+    backdrop-filter: blur(26px) saturate(.35);
+    box-shadow: inset 0 0 0 1px rgba(233, 247, 255, .12);
+  }
+  .date { font-size: 30px; color: var(--ice); }
+  .grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 34px; column-gap: 24px; }
+  .grid small { display: block; font-size: 17px; color: var(--ice-dim); margin-bottom: 8px; white-space: nowrap; }
+  .grid b { font-weight: 400; font-size: 31px; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <img class="photo" src="../photos/11.jpg" alt="">
+  <div class="heat"></div>
+  <div class="vig"></div>
+
+  <div class="card">
+    <div class="fog"></div>
+    <div class="label">Current weather — Inside</div>
+    <div class="temp">21°C</div>
+    <div class="meta">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 2 3-2M9 20l3-2 3 2"/></svg>Air-conditioned</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Seoul</span>
+    </div>
+
+    <div class="panel">
+      <div class="date">09-Oct-2026, Fri 14:21:00</div>
+      <div class="grid">
+        <div><small>01 · Lucy Gang</small><b>Headlock</b></div>
+        <div><small>02 · AOKI takamasa</small><b>Rhythm Var. 06</b></div>
+        <div><small>03 · Kelly Lee Owens</small><b>More Than a Woman</b></div>
+        <div><small>04 · Logic1000 ft. yunè pinku</small><b>What You Like</b></div>
+        <div><small>05 · Floating Points</small><b>LesAlpx</b></div>
+        <div><small>06 · Cousin</small><b>Citta</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 좌표는 커버(1500) 기준. 온도 21°→y900, 1°당 20px -->
+  <svg class="chart" viewBox="0 0 1500 1500">
+    <g stroke="rgba(233,247,255,.35)" stroke-width="1.5">
+      <line x1="210" y1="545" x2="210" y2="1010"/>
+      <line x1="426" y1="545" x2="426" y2="1010"/>
+      <line x1="642" y1="545" x2="642" y2="1010"/>
+      <line x1="858" y1="545" x2="858" y2="1010"/>
+      <line x1="1074" y1="545" x2="1074" y2="1010"/>
+      <line x1="1290" y1="545" x2="1290" y2="1010"/>
+    </g>
+    <!-- 문이 열린 순간 -->
+    <line x1="750" y1="500" x2="750" y2="1040" stroke="var(--cyan)" stroke-width="3"/>
+    <g fill="var(--cyan)">
+      <rect x="196" y="646" width="28" height="28"/>
+      <rect x="412" y="626" width="28" height="28"/>
+      <rect x="628" y="626" width="28" height="28"/>
+      <rect x="844" y="846" width="28" height="28"/>
+      <rect x="1060" y="886" width="28" height="28"/>
+      <rect x="1276" y="886" width="28" height="28"/>
+    </g>
+    <g font-size="32" text-anchor="middle" class="shadow">
+      <text x="210" y="530">33</text>
+      <text x="426" y="530">34</text>
+      <text x="642" y="530">34</text>
+      <text x="858" y="530">23</text>
+      <text x="1074" y="530">21</text>
+      <text x="1290" y="530">21</text>
+    </g>
+    <g font-size="32" text-anchor="middle">
+      <text x="210" y="1048">01</text>
+      <text x="426" y="1048">02</text>
+      <text x="642" y="1048">03</text>
+      <text x="858" y="1048">04</text>
+      <text x="1074" y="1048">05</text>
+      <text x="1290" y="1048">06</text>
+    </g>
+    <rect x="690" y="1016" width="120" height="44" rx="22" fill="rgba(12,32,48,.5)" stroke="var(--cyan)" stroke-width="2"/>
+    <text x="750" y="1046" font-size="22" text-anchor="middle" fill="var(--cyan)">Door</text>
+  </svg>
+</div>
+</body>
+</html>

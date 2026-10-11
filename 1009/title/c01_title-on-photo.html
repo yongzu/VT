@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>21°C — 타이틀 적용 (OVVN 레퍼런스 정보 배치)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=block" rel="stylesheet">
+<style>
+  /* 뜨거운 사진 위로 얼음색 외곽선 타이틀이 바람처럼 지나간다.
+     작은 정보는 레퍼런스처럼 대문자 한 크기로 통일 */
+  :root { --ice: #E6F6FF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; }
+  .cover {
+    position: relative; width: 1500px; height: 1500px; overflow: hidden;
+    font-family: "Inter", sans-serif; color: var(--ice);
+  }
+  .photo {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(1.45) contrast(1.08) brightness(1.02);
+  }
+  .heat { position: absolute; inset: 0; mix-blend-mode: soft-light; background: radial-gradient(60% 55% at 58% 48%, rgba(255, 110, 0, .55), rgba(255, 60, 0, .2) 75%); }
+  .shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 10, 14, .94) 0%, rgba(8, 10, 14, .8) 20%, rgba(8, 10, 14, .35) 33%, rgba(8, 10, 14, 0) 44%); }
+  .title { position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 0 1px rgba(0, 0, 0, .35)); }
+  .t { position: absolute; font-size: 17px; font-weight: 600; line-height: 1.32; text-transform: uppercase; letter-spacing: .01em; }
+  .brand { font-weight: 800; font-size: 46px; letter-spacing: -.02em; line-height: 1; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <img class="photo" src="../photos/11.jpg" alt="">
+  <div class="heat"></div>
+  <div class="shade"></div>
+  <img class="title" src="t01_outline-flow_ice.svg" alt="21°C">
+
+  <div class="t" style="top:52px;left:0;right:0;text-align:center">Contrast · Transition · Air</div>
+  <div class="t" style="top:800px;left:48px">Outside 34°C</div>
+  <div class="t" style="top:960px;right:48px;text-align:right">Inside 21°C — let the door close behind you</div>
+
+  <div class="t" style="left:48px;bottom:48px;width:420px">
+    <div class="brand">21°C</div>
+    House music compilation<br>for the moment the door opens<br><br>
+    6 tracks<br>
+    Colors: #E6F6FF + #FF5A1F<br>
+    Seoul, 2026
+  </div>
+  <div class="t" style="left:560px;bottom:48px;width:400px">
+    From a humid street<br>into the dry air of a store.<br>
+    Your body loosens, the room opens up.<br><br>
+    When do you feel cool?
+  </div>
+  <div class="t" style="left:1040px;bottom:48px;width:420px">
+    Tracklist<br><br>
+    1. Lucy Gang — Headlock<br>
+    2. AOKI takamasa — Rhythm Variation 06<br>
+    3. Kelly Lee Owens — More Than a Woman<br>
+    4. Logic1000 — What You Like<br>
+    5. Floating Points — LesAlpx<br>
+    6. Cousin — Citta
+  </div>
+</div>
+</body>
+</html>
