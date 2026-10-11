@@ -17,12 +17,16 @@
 
 ## 트랙리스트
 
-1. Lucy Gang — Headlock
-2. AOKI takamasa — Rhythm Variation 06
-3. Kelly Lee Owens — More Than a Woman
-4. Logic1000 — What You Like (feat. yunè pinku)
-5. Floating Points — LesAlpx
-6. Cousin — Citta
+청음회 제출용으로 곡마다 구간을 골랐다(6곡 합계 90초). 커버에서는 21°C 위 별 개수(2·1·3)대로 곡을 나눠 배치한다 → 1 아래 1곡, 2 아래 2곡, C 아래 3곡.
+
+| # | 곡 | 구간 (시작·길이) | 커버 위치 |
+| --- | --- | --- | --- |
+| 1 | Lucy Gang — [HEADLOCK](https://www.youtube.com/watch?v=Ud9pSEkskQQ) | 58초 · 15초 | 1 |
+| 2 | KiiiKiii — [404 (New Era) (Instrumental)](https://www.youtube.com/watch?v=_o8M1Ax-A5s) | 60초 · 15초 | 2 |
+| 3 | f(x) — [4 Walls (Official Instrumental)](https://www.youtube.com/watch?v=70VpTLpku8c) | 45초 · 17초 | 2 |
+| 4 | Yves — [LOOP (feat. Lil Cherry) (Instrumental)](https://www.youtube.com/watch?v=Gqcmm7LhJA0) | 37초 · 16초 | C |
+| 5 | aespa — [Angel #48 (Instrumental)](https://www.youtube.com/watch?v=M52D66lVjDQ) | 40초 · 11초 | C |
+| 6 | ALLDAY PROJECT — ['FAMOUS' (House Remix)](https://www.youtube.com/watch?v=loRa1WBvYOA) | 0초 · 16초 | C |
 
 ## 3. 시각화 키워드
 
@@ -45,6 +49,11 @@
 - **강조한 것**: 콘셉트 기획 첫 문장인 '같은 숫자여도 전혀 다른 감각'. 질문 "몇 도일까?"에 "21도."로 바로 답하고, 봄날의 21도와 한여름의 21도를 대비했다
 - **뺀 것**: "편집숍을 천천히 둘러보듯" (바뀐 톤과 맞지 않아 보류했던 문장)
 - 분량: 공백 포함 296자 (300자 이하)
+
+### 트랙리스트 변경 ([1011](1011/))
+- **이전**: Lucy Gang, AOKI takamasa, Kelly Lee Owens, Logic1000, Floating Points, Cousin (해외 일렉트로닉 중심)
+- **변경**: Lucy Gang을 남기고 KiiiKiii, f(x), Yves, aespa, ALLDAY PROJECT로 교체 (K-pop 인스트루멘털·하우스 리믹스 중심)
+- 바꾼 이유: (기록 필요)
 
 ### 보류 중인 사항
 - 사진 이후 최종 이미지를 구체적으로 어떻게 만들지 아직 협의하지 않았다. 일요일(1011) 전까지 발전시킬 계획이다.
