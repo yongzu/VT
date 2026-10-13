@@ -4,7 +4,7 @@
 
 - 제출 슬라이드 ①~⑤: [1013/slides](1013/slides/)
 - 웹페이지(임시): [WK05/](WK05/) → https://yongzu.github.io/VT/WK05/
-- 발표 슬라이드 1920×1080 (임시 디자인, 키워드 미니멀): [WK05/deck/](WK05/deck/) · [PDF](WK05/deck/VT05_TEAM04.pdf) · [PNG](WK05/deck/png/)
+- 발표 슬라이드 1920×1080 (yongzu.github.io/BI 스타일, 그래픽 없음): [WK05/deck/](WK05/deck/) · [PDF](WK05/deck/VT05_TEAM04.pdf) · [PNG](WK05/deck/png/)
 
 ## 확정 제목
 
