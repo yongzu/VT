@@ -69,8 +69,8 @@ ol,ul{list-style:none}
 .pills span.on{background:var(--ink);color:#fff}
 
 /* ① */
-.s1 .top{display:grid;grid-template-columns:auto 1fr;column-gap:88px;align-items:end}
-.s1 .top .subheading{font-size:32px;line-height:1.42;padding-bottom:4px}
+.s1 .top{display:grid;grid-template-columns:auto 1fr;column-gap:96px;align-items:start}
+.s1 .top .thesis-rest{margin-top:18px;font-size:30px;line-height:1.42}
 .s1 .en{margin-top:18px}
 .s1 .main{display:grid;grid-template-columns:1fr 1fr;column-gap:96px;margin-top:52px;flex:1}
 .s1 .display{font-size:84px;white-space:nowrap}
@@ -86,7 +86,13 @@ ol,ul{list-style:none}
 .s2 .prose .body{font-size:23px;line-height:1.8}
 .s2 .prose .body+.body{margin-top:22px}
 .s2b .lead{margin-top:14px;max-width:1100px}
-.arts{display:grid;grid-template-columns:repeat(3,1fr);column-gap:56px;margin-top:40px;flex:1}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);column-gap:64px;margin-top:48px}
+.arts .art{display:flex;flex-direction:column}
+.art .bio{margin:22px 0 28px;font-size:21px;line-height:1.8;color:var(--ink-2)}
+.art .facts2{margin-top:auto;padding-top:0;border-top:1px solid var(--rule)}
+.art .facts2>div{display:grid;grid-template-columns:92px 1fr;column-gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.art .facts2 dt{font-size:17px;font-weight:500;color:var(--ink-3)}
+.art .facts2 dd{font-size:18px;color:var(--ink)}
 .arts .art{margin-top:0}
 .arts .art+.art{margin-top:0}
 .art .note{margin-top:14px;font-size:18px;line-height:1.6;color:var(--ink-3)}
@@ -161,7 +167,7 @@ html.single .frame:not(.on){display:none}
   <div class="bar"><span class="team">VT · TEAM 04</span><nav><span class="on">① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
   <div class="top">
     <div><h1 class="display">연결에 스며든 사랑</h1><p class="lead en">Sarang Within Connection · 이가은 · 임창균 · 조용주</p></div>
-    <p class="subheading">사랑의 깊이는<br>좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다.</p>
+    <div><p class="display" style="font-size:84px;white-space:nowrap">사랑의 깊이는</p><p class="subheading thesis-rest">좋아하는 마음의 크기가 아니라,<br>서로의 세계가 스며든 넓이다.</p></div>
   </div>
   <div class="main">
     <div class="read">
@@ -213,29 +219,19 @@ html.single .frame:not(.on){display:none}
   <p class="lead">작품 하나가 아니라 연작이나 프로젝트로 주제를 다뤄 온 작가를 골랐다. 키워드를 작가마다 나눠 맡기지 않고 전시 전체로 본다.</p>
   <div class="arts">
     <div class="art">
-      <div class="who"><span class="heading" style="font-size:42px">니키 리</span><span class="meta">Nikki S. Lee · 사진 · 퍼포먼스 · 한국 출신</span></div>
-      <dl class="dl">
-        <div><dt>대표 작업</dt><dd>《Projects》 1997-2001<br>《Parts》 2002-2005</dd></div>
-        <div><dt>방식</dt><dd>펑크족, 힙합, 스케이트보더, 노년층 등 서로 다른 공동체에 들어가 옷차림과 행동, 생활방식을 익히고 함께 지낸 뒤, 구성원에게 사진을 부탁해 그 일부가 된 자신을 기록했다. 《Parts》에서는 함께 찍은 상대를 잘라 내고 자신만 남겼다</dd></div>
-        <div><dt>우리 주제</dt><dd>누구와 함께하느냐에 따라 모습은 바뀌어도 그 안에 한 사람이 남는다. 사라진 상대와의 관계는 남은 사람의 표정과 자세에 흔적으로 남는다<span class="sub">영향 · 경계 · 흔적</span></dd></div>
-      </dl>
-      <p class="note">본래 주제는 사랑보다 정체성과 사회적 관계다. 이 전시에서는 '타인과의 연결이 나를 어떻게 바꾸는가'라는 관점으로 소개한다.</p>
+      <div class="who"><span class="heading" style="font-size:42px">카럴 마르턴스</span><span class="meta">Karel Martens · 1939 · 네덜란드 · 그래픽 디자이너, 예술가</span></div>
+      <p class="bio">1939년 네덜란드에서 태어난 그래픽 디자이너이자 예술가다. 타이포그래피, 북디자인, 교육 등 다양한 분야에서 활동해 왔다. 누군가 사용했던 종이 위에 색과 형태를 반복해서 찍어내는 모노프린트 작업으로 잘 알려져 있다. 오래된 기록 위에 새로운 흔적을 쌓으며, 서로 다른 시간과 이미지가 만나 만들어내는 우연한 아름다움을 탐구한다. 그의 작업은 타인의 흔적 위에 자신의 색이 더해지며 새로운 세계가 탄생한다는 전시의 메시지와 맞닿아 있다.</p>
+      <dl class="facts2"><div><dt>대표 작업</dt><dd>모노프린트 연작 · 『Tokyo Papers』</dd></div><div><dt>키워드</dt><dd>겹침 · 흔적 · 창발</dd></div></dl>
     </div>
     <div class="art">
-      <div class="who"><span class="heading" style="font-size:42px">Karel Martens</span><span class="meta">그래픽 디자이너 · 네덜란드</span></div>
-      <dl class="dl">
-        <div><dt>대표 작업</dt><dd>모노프린트 연작 1980년대 말부터<br>『Tokyo Papers』</dd></div>
-        <div><dt>방식</dt><dd>버려진 금속 부품을 도장처럼 써서, 남이 쓰던 장부 카드나 서류 위에 색을 한 겹씩 겹쳐 찍는다. 한 모티프를 몇 년에 걸쳐 덧찍기도 한다. 『Tokyo Papers』는 도쿄 시장에서 구한, 누군가 기입한 서류 위에 찍었다</dd></div>
-        <div><dt>우리 주제</dt><dd>타인의 기록 위에 내 색이 겹쳐, 어느 쪽에도 없던 색이 생긴다<span class="sub">겹침 · 흔적 · 창발</span></dd></div>
-      </dl>
+      <div class="who"><span class="heading" style="font-size:42px">김애란</span><span class="meta">Kim Ae-ran · 1980 · 소설가</span></div>
+      <p class="bio">1980년생 소설가로, 『두근두근 내 인생』, 『비행운』, 『바깥은 여름』 등을 집필했다. 일상에서 마주하는 사람들의 삶과 감정을 섬세한 언어로 풀어내며, 평범한 순간에 깃든 관계의 의미를 발견한다. 첫 산문집 『잊기 좋은 이름』에서는 자신을 지나온 사람과 풍경, 기억을 돌아보며 지금의 자신을 이루는 수많은 이름을 불러낸다. 타인을 기억하고 이해하는 일이 곧 자신을 이해하는 과정이 될 수 있음을 이야기한다.</p>
+      <dl class="facts2"><div><dt>대표 작업</dt><dd>산문집 『잊기 좋은 이름』 (2019)</dd></div><div><dt>키워드</dt><dd>흔적 · 영향</dd></div></dl>
     </div>
     <div class="art">
-      <div class="who"><span class="heading" style="font-size:42px">김애란</span><span class="meta">소설가 · 『두근두근 내 인생』 『비행운』 『바깥은 여름』</span></div>
-      <dl class="dl">
-        <div><dt>대표 작업</dt><dd>산문집 『잊기 좋은 이름』<br>열림원, 2019</dd></div>
-        <div><dt>방식</dt><dd>등단 후 17년 동안 만난 사람, 풍경, 시간의 이름을 불러낸다. 나를 부른 이름에서 너와 부른 이름들, 우릴 부른 이름들로 넓어진다</dd></div>
-        <div><dt>우리 주제</dt><dd>지금의 나를 이룬 타인의 흔적을 하나씩 불러내는, 질문에 대한 한 사람의 대답<span class="sub">흔적 · 영향</span></dd></div>
-      </dl>
+      <div class="who"><span class="heading" style="font-size:42px">니키 리</span><span class="meta">Nikki S. Lee · 1970 · 한국 · 사진 · 퍼포먼스 작가, 영화감독</span></div>
+      <p class="bio">1970년생 한국 출신의 사진·퍼포먼스 작가이자 영화감독이다. 서로 다른 공동체에 직접 참여하며 자신의 외모와 행동을 변화시키고, 그 모습을 사진으로 기록하는 작업으로 알려져 있다. 대표작 《Projects》와 《Parts》를 통해 개인의 정체성이 고정된 것이 아니라 타인과의 관계 속에서 끊임없이 변화한다는 사실을 탐구한다. 그의 작품은 우리가 누군가와 함께하는 동안 서로의 일부를 받아들이며 이전과는 다른 존재가 되어가는 과정을 보여준다.</p>
+      <dl class="facts2"><div><dt>대표 작업</dt><dd>《Projects》 1997-2001 · 《Parts》 2002-2005</dd></div><div><dt>키워드</dt><dd>영향 · 경계 · 흔적</dd></div></dl>
     </div>
   </div>
   <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획</span><span>03 / 06</span></div>
@@ -258,7 +254,7 @@ html.single .frame:not(.on){display:none}
     </div>
     <dl class="dl">
       <div><dt>전시명</dt><dd><b>연결에 스며든 사랑</b><span class="sub">Sarang Within Connection</span></dd></div>
-      <div><dt>참여 작가</dt><dd>니키 리 · Karel Martens · 김애란</dd></div>
+      <div><dt>참여 작가</dt><dd>카럴 마르턴스 Karel Martens · 김애란 · 니키 리 Nikki S. Lee</dd></div>
       <div><dt>기간</dt><dd>11.05 - 12.05<span class="sub tbd">연도 미정</span></dd></div>
       <div><dt>관람 시간</dt><dd>10:00 - 18:00<span class="sub tbd">휴관일 미정</span></dd></div>
       <div><dt>장소</dt><dd>서울특별시 성동구 왕십리로14길 36 (성수동1가)<span class="sub">36, Wangsimni-ro 14-gil, Seongdong-gu, Seoul, Republic of Korea</span></dd></div>
