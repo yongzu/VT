@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VT 5주차 · 연결에 스며든 사랑 — 발표 슬라이드</title>
+<link rel="icon" type="image/png" href="../../assets/mark.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<!--
+  1920×1080 발표 슬라이드 5장(①~⑤). 키워드: 미니멀 — 흑백, 넓은 여백, 가는 선, 모티프는 '두 원의 겹침' 하나.
+  레퍼런스 스타일을 넣기 전의 임시 디자인.
+  보기: 이 페이지 / 한 장만: ?s=3 (1920×1080 그대로, PNG 내보내기용) / 인쇄: 한 장이 한 쪽(PDF 내보내기용)
+-->
+<style>
+:root{--ink:#111;--text:#333;--muted:#8a8a8a;--rule:#e4e4e4;--w:1920px;--h:1080px;--mx:128px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#f3f3f3}
+body{font-family:"Pretendard Variable",Pretendard,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all;letter-spacing:-.01em}
+ol,ul{list-style:none}
+
+/* 보기 화면: 슬라이드를 화면 폭에 맞춰 줄여 세로로 늘어놓는다 */
+.deck{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 24px 80px}
+.frame{width:min(1600px,100%);aspect-ratio:16/9;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.frame>.slide{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--k,1))}
+
+/* 슬라이드 */
+.slide{width:var(--w);height:var(--h);background:#fff;position:relative;padding:96px var(--mx) 112px;display:flex;flex-direction:column}
+.chrome{position:absolute;left:var(--mx);right:var(--mx);display:flex;justify-content:space-between;font-size:18px;color:var(--muted);letter-spacing:0}
+.chrome.top{top:52px}.chrome.bottom{bottom:48px}
+.chrome .sec{color:var(--ink)}
+.label{font-size:20px;color:var(--muted);letter-spacing:0}
+.hair{height:1px;background:var(--rule)}
+.motif circle{fill:none;stroke:var(--ink);stroke-width:1.5}
+
+/* ① 콘셉트 */
+.s1 .hero{display:grid;grid-template-columns:1fr 520px;align-items:center;flex:1}
+.s1 h1{font-size:112px;font-weight:700;line-height:1.05;letter-spacing:-.04em}
+.s1 .en{margin-top:20px;font-size:36px;font-weight:300;color:var(--text)}
+.s1 .thesis{margin-top:64px;font-size:34px;line-height:1.5;font-weight:500;max-width:980px}
+.s1 .motif{justify-self:end}
+.cols4{display:grid;grid-template-columns:repeat(4,1fr);column-gap:48px;padding-top:36px;border-top:1px solid var(--rule)}
+.cols4 h3{font-size:18px;font-weight:600;color:var(--muted);margin-bottom:14px;letter-spacing:0}
+.cols4 p{font-size:23px;line-height:1.6;color:var(--text)}
+
+/* ② 서문 */
+.s2 .body{display:grid;grid-template-columns:1fr 1px 520px;column-gap:88px;flex:1;padding-top:96px}
+.s2 .quote{font-size:52px;font-weight:600;line-height:1.38;letter-spacing:-.03em}
+.s2 .para{margin-top:56px;font-size:26px;line-height:1.75;color:var(--text);max-width:900px}
+.s2 .ask{margin-top:48px;font-size:30px;font-weight:600}
+.s2 .vr{background:var(--rule)}
+.artists li{padding:28px 0;border-bottom:1px solid var(--rule)}
+.artists li:first-child{padding-top:0}
+.artists .name{font-size:34px;font-weight:600}
+.artists .work{margin-top:6px;font-size:20px;color:var(--muted)}
+.artists .why{margin-top:14px;font-size:22px;line-height:1.6;color:var(--text)}
+.artists .more{border:0;color:var(--muted);font-size:20px}
+
+/* ③ 포스터 원고 */
+.s3 .body{display:grid;grid-template-columns:1fr 1fr;column-gap:120px;flex:1;padding-top:96px}
+.s3 .venue{font-size:96px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.s3 .venue-ko{margin-top:24px;font-size:30px}
+.s3 .venue-why{margin-top:12px;font-size:22px;color:var(--muted)}
+.s3 .dates{margin-top:96px;font-size:72px;font-weight:300;letter-spacing:-.03em}
+.s3 .hours{margin-top:12px;font-size:26px;color:var(--text)}
+.facts{align-self:start}
+.facts li{display:grid;grid-template-columns:160px 1fr;padding:26px 0;border-bottom:1px solid var(--rule);font-size:26px;line-height:1.5}
+.facts li:first-child{border-top:1px solid var(--rule)}
+.facts .k{font-size:18px;color:var(--muted);padding-top:6px;letter-spacing:0}
+.facts .sub{display:block;font-size:18px;color:var(--muted)}
+
+/* ④ 키워드 */
+.s4 .lead{margin-top:84px;font-size:40px;font-weight:600;letter-spacing:-.03em}
+.kw{display:grid;grid-template-columns:repeat(5,1fr);column-gap:40px;margin-top:auto}
+.kw li{display:flex;flex-direction:column}
+.kw svg{width:240px;height:168px;overflow:visible}
+.kw .ko{margin-top:44px;font-size:48px;font-weight:700;letter-spacing:-.03em}
+.kw .en{margin-top:6px;font-size:18px;color:var(--muted);letter-spacing:0}
+.kw .def{margin-top:22px;padding-top:22px;border-top:1px solid var(--rule);font-size:22px;line-height:1.6;color:var(--text)}
+.g .line{fill:none;stroke:var(--ink);stroke-width:1.5}
+.g .dash{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-dasharray:3 7}
+.g .tint{fill:#d9d9d9;mix-blend-mode:multiply}
+.g .solid{fill:var(--ink)}
+
+/* ⑤ 의사결정 */
+.s5 .lead{margin-top:84px;display:flex;align-items:baseline;gap:28px}
+.s5 .lead b{font-size:40px;font-weight:600;letter-spacing:-.03em}
+.s5 .lead span{font-size:20px;color:var(--muted)}
+.cols4.dec{margin-top:auto;padding-top:40px}
+.shift{display:flex;align-items:center;gap:56px;margin-top:72px}
+.shift figure{display:flex;flex-direction:column;align-items:center;gap:14px}
+.shift figcaption{font-size:18px;color:var(--muted);letter-spacing:0}
+.shift .arrow{font-size:32px;color:var(--muted);padding-bottom:36px}
+.dec h3{color:var(--ink);font-size:22px;margin-bottom:24px}
+.dec li{font-size:22px;line-height:1.55;color:var(--text);padding:14px 0;border-top:1px solid var(--rule)}
+.dec li .r{display:block;color:var(--muted);font-size:19px;margin-top:4px}
+
+/* 한 장만(?s=N): 1920×1080 그대로 */
+html.single,html.single body{background:#fff;width:1920px;height:1080px;overflow:hidden}
+html.single .deck{display:block;padding:0}
+html.single .frame{width:1920px;height:1080px;box-shadow:none}
+html.single .frame>.slide{transform:none}
+html.single .frame:not(.on){display:none}
+/* 인쇄: 한 장이 한 쪽 */
+@page{size:1920px 1080px;margin:0}
+@media print{
+ html,body{background:#fff}
+ .deck{display:block;padding:0}
+ .frame{width:1920px;height:1080px;box-shadow:none;break-after:page;aspect-ratio:auto}
+ .frame>.slide{transform:none}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+
+<!-- ① 전시 제목 및 콘셉트 기획 -->
+<div class="frame"><section class="slide s1" aria-label="① 전시 제목 및 콘셉트 기획">
+  <div class="chrome top"><span class="sec">① 전시 제목 및 콘셉트 기획</span><span>Visual Translation · TEAM 04</span></div>
+  <div class="hero">
+    <div>
+      <h1>연결에 스며든 사랑</h1>
+      <p class="en">Sarang Within Connection</p>
+      <p class="thesis">사랑의 깊이는 좋아하는 마음의 크기가 아니라,<br>서로의 세계가 스며든 넓이다.</p>
+    </div>
+    <svg class="motif" width="480" height="340" viewBox="0 0 480 340" aria-hidden="true"><circle cx="170" cy="170" r="150"/><circle cx="310" cy="170" r="150"/></svg>
+  </div>
+  <div class="cols4">
+    <div><h3>01 주제와 질문</h3><p>사랑을 감정이 아닌, 서로 다른 세계가 겹치고 스며들며 서로를 바꾸어 가는 과정으로 본다.</p></div>
+    <div><h3>02 작가의 관점</h3><p>관계가 남긴 흔적에 주목한다. 서로 닮아 가되, 각자의 고유함을 간직한 채 세계를 넓힌다.</p></div>
+    <div><h3>03 관계와 맥락</h3><p>배운 말투, 함께 생긴 취향, 닮아 버린 습관. 사랑을 연인 너머 모든 관계로 넓힌다.</p></div>
+    <div><h3>04 대상 관객</h3><p>'나'를 이해하고 싶은 사람. 내 안에 남은 타인의 흔적에서 지금의 나를 발견한다.</p></div>
+  </div>
+  <div class="chrome bottom"><span>이가은 · 임창균 · 조용주</span><span>01 / 05</span></div>
+</section></div>
+
+<!-- ② 전시 서문 및 참여 작가 -->
+<div class="frame"><section class="slide s2" aria-label="② 전시 서문 및 참여 작가 목록">
+  <div class="chrome top"><span class="sec">② 전시 서문 및 참여 작가 목록</span><span>연결에 스며든 사랑</span></div>
+  <div class="body">
+    <div>
+      <p class="quote">누군가와 연결되는 순간,<br>두 세계는 선을 긋듯 나뉘지 않고<br>조금씩 번지며 섞여 든다.</p>
+      <p class="para">누군가에게서 배운 말투, 함께하며 생겨난 취향, 무심코 닮아 버린 습관처럼 사랑의 흔적은 일상 곳곳에 남아 있다. 이 전시는 그 흔적을 따라, 지금의 나를 이룬 사람들을 돌아본다.</p>
+      <p class="ask">당신 안에는 누구의 모습이 남아 있나요?</p>
+    </div>
+    <div class="vr"></div>
+    <div>
+      <p class="label">참여 작가</p>
+      <ul class="artists" style="margin-top:32px">
+        <li><p class="name">Karel Martens</p><p class="work">모노프린트 연작 · 1980년대 말 ~</p><p class="why">남이 쓰던 서류 위에 색을 한 겹씩 겹쳐 찍어, 어느 쪽에도 없던 새 색을 만든다.</p></li>
+        <li><p class="name">김애란</p><p class="work">『잊기 좋은 이름』 · 2019</p><p class="why">나를 부른 이름에서 우리를 부른 이름까지, 지금의 나를 이룬 이름들을 불러낸다.</p></li>
+        <li class="more">추가 예정</li>
+      </ul>
+    </div>
+  </div>
+  <div class="chrome bottom"><span>이가은 · 임창균 · 조용주</span><span>02 / 05</span></div>
+</section></div>
+
+<!-- ③ 포스터에 들어갈 원고 -->
+<div class="frame"><section class="slide s3" aria-label="③ 포스터에 들어갈 원고">
+  <div class="chrome top"><span class="sec">③ 포스터에 들어갈 원고</span><span>연결에 스며든 사랑</span></div>
+  <div class="body">
+    <div>
+      <p class="venue">SAI Museum<br>of Art</p>
+      <p class="venue-ko">사이미술관</p>
+      <p class="venue-why">두 세계 '사이'의 공간</p>
+      <p class="dates">11.05 — 12.05</p>
+      <p class="hours">10:00 — 18:00</p>
+    </div>
+    <ul class="facts">
+      <li><span class="k">전시</span><span>연결에 스며든 사랑<span class="sub">Sarang Within Connection</span></span></li>
+      <li><span class="k">참여 작가</span><span>김애란 · Karel Martens</span></li>
+      <li><span class="k">장소</span><span>서울특별시 성동구 왕십리로14길 36<span class="sub">36, Wangsimni-ro 14-gil, Seongdong-gu, Seoul</span></span></li>
+      <li><span class="k">주최 · 주관</span><span>사이미술관</span></li>
+      <li><span class="k">협찬</span><span>Toss · Phi Institute of Design</span></li>
+    </ul>
+  </div>
+  <div class="chrome bottom"><span>이가은 · 임창균 · 조용주</span><span>03 / 05</span></div>
+</section></div>
+
+<!-- ④ 시각화 핵심 키워드 -->
+<div class="frame"><section class="slide s4" aria-label="④ 시각화 핵심 키워드">
+  <div class="chrome top"><span class="sec">④ 시각화 핵심 키워드</span><span>연결에 스며든 사랑</span></div>
+  <p class="lead">두 세계가 만나, 겹치고, 남는다.</p>
+  <ul class="kw">
+    <li>
+      <svg class="g" viewBox="0 0 200 140" aria-hidden="true"><circle class="line" cx="62" cy="70" r="52"/><ellipse class="line" cx="142" cy="70" rx="30" ry="60"/></svg>
+      <p class="ko">영향</p><p class="en">Influence</p>
+      <p class="def">상대의 말과 행동이 스며들어 나를 바꾼다.</p>
+    </li>
+    <li>
+      <svg class="g" viewBox="0 0 200 140" aria-hidden="true"><circle class="dash" cx="70" cy="70" r="52"/><circle class="line" cx="130" cy="70" r="52"/></svg>
+      <p class="ko">흔적</p><p class="en">Trace</p>
+      <p class="def">관계가 지나간 뒤에도 남는 말투, 습관, 취향.</p>
+    </li>
+    <li>
+      <svg class="g" viewBox="0 0 200 140" aria-hidden="true"><defs><filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter></defs><circle class="tint" cx="130" cy="70" r="52" filter="url(#soft)"/><circle class="line" cx="70" cy="70" r="52"/></svg>
+      <p class="ko">경계</p><p class="en">Boundary</p>
+      <p class="def">섞여도 사라지지 않는 각자의 고유함.</p>
+    </li>
+    <li>
+      <svg class="g" viewBox="0 0 200 140" aria-hidden="true"><circle class="tint" cx="70" cy="70" r="52"/><circle class="tint" cx="130" cy="70" r="52"/></svg>
+      <p class="ko">겹침</p><p class="en">Overlap</p>
+      <p class="def">두 세계가 만나는 자리. 전시의 출발점.</p>
+    </li>
+    <li>
+      <svg class="g" viewBox="0 0 200 140" aria-hidden="true"><defs><clipPath id="lens"><circle cx="70" cy="70" r="52"/></clipPath></defs><circle class="solid" cx="130" cy="70" r="52" clip-path="url(#lens)"/><circle class="line" cx="70" cy="70" r="52"/><circle class="line" cx="130" cy="70" r="52"/></svg>
+      <p class="ko">창발</p><p class="en">Emergence</p>
+      <p class="def">A와 B가 만나 어느 쪽에도 없던 C가 된다.</p>
+    </li>
+  </ul>
+  <div class="chrome bottom"><span>이가은 · 임창균 · 조용주</span><span>04 / 05</span></div>
+</section></div>
+
+<!-- ⑤ 주요 의사결정 및 토론 요약 -->
+<div class="frame"><section class="slide s5" aria-label="⑤ 주요 의사결정 및 토론 요약">
+  <div class="chrome top"><span class="sec">⑤ 주요 의사결정 및 토론 요약</span><span>연결에 스며든 사랑</span></div>
+  <p class="lead"><b>'세계의 교집합'에서 '스며든 넓이'로</b><span>회의 2회 · 10/12 46분 · 10/13 71분</span></p>
+  <div class="shift" aria-hidden="true">
+    <figure><svg class="g" width="260" height="150" viewBox="0 0 260 150"><circle class="line" cx="95" cy="75" r="62"/><circle class="line" cx="165" cy="75" r="62"/></svg><figcaption>세계의 교집합 — 선으로 나뉜다</figcaption></figure>
+    <span class="arrow">→</span>
+    <figure><svg class="g" width="260" height="150" viewBox="0 0 260 150"><defs><filter id="seep" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="9"/></filter></defs><circle class="tint" cx="95" cy="75" r="58" filter="url(#seep)"/><circle class="tint" cx="165" cy="75" r="58" filter="url(#seep)"/></svg><figcaption>스며든 넓이 — 번지며 섞인다</figcaption></figure>
+  </div>
+  <div class="cols4 dec">
+    <div><h3>방향을 정한 기준</h3><ul>
+      <li>관객이 무엇을 가져가는가</li>
+      <li>한 갈래로 간다</li>
+      <li>'스며든'이 보이는가</li>
+      <li>읽히는 말, 시각으로 옮길 수 있는 말</li>
+    </ul></div>
+    <div><h3>검토했지만 제외한 대안</h3><ul>
+      <li>연결의 방식 3트랙<span class="r">전시가 세 갈래로 갈라진다</span></li>
+      <li>"하나가 된다"<span class="r">관계는 존중하며 번져 가는 과정이다</span></li>
+      <li>키워드 번짐 · 고유함<span class="r">더 넓은 '영향', 보이는 '경계'로</span></li>
+    </ul></div>
+    <div><h3>의견이 갈린 지점</h3><ul>
+      <li>서로의 일부 ↔ 번져 감<span class="r">"서로의 일부가 되는 방식이 번져 가는 것"</span></li>
+      <li>서문을 덜 읽히게 ↔ 잘 읽히게<span class="r">전문가 피드백을 따라 평서문</span></li>
+      <li>번짐 ↔ 영향<span class="r">영향을 키워드로, 번짐은 표현 방법으로</span></li>
+    </ul></div>
+    <div><h3>아직 결정하지 못한 쟁점</h3><ul>
+      <li>참여 작가 추가와 서문의 작가 문단</li>
+      <li>매체 운용 — 사진과 드로잉을 담는 법</li>
+      <li>부정(−) 요소를 그래픽에서 다룰지</li>
+    </ul></div>
+  </div>
+  <div class="chrome bottom"><span>이가은 · 임창균 · 조용주</span><span>05 / 05</span></div>
+</section></div>
+
+</main>
+<script>
+// ?s=N → 그 장만 1920×1080 그대로(내보내기용). 아니면 화면 폭에 맞춰 줄인다
+(() => {
+  const n = +new URLSearchParams(location.search).get('s');
+  const frames = [...document.querySelectorAll('.frame')];
+  if (n) { document.documentElement.classList.add('single'); frames[n - 1]?.classList.add('on'); return; }
+  const fit = () => frames.forEach(f => f.style.setProperty('--k', f.clientWidth / 1920));
+  fit(); addEventListener('resize', fit);
+  // ← → / PageUp PageDown으로 한 장씩 넘긴다
+  addEventListener('keydown', e => {
+    const d = { ArrowRight: 1, PageDown: 1, ArrowLeft: -1, PageUp: -1 }[e.key];
+    if (!d) return;
+    const mid = innerHeight / 2;
+    const i = frames.findIndex(f => f.getBoundingClientRect().bottom > mid);
+    frames[Math.max(0, Math.min(frames.length - 1, i + d))].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    e.preventDefault();
+  });
+})();
+</script>
+</body>
+</html>

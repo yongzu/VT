@@ -143,4 +143,5 @@ main{flex:1;margin:62px 0 160px}
 .copy .k{color:var(--ink)}
 .copy ul{margin:0;padding-left:1.1em}.copy li+li{margin-top:6px}
 .copy .muted{color:var(--faint)}
+.section-meta .src-link{color:var(--muted);text-decoration:underline;text-underline-offset:3px}.section-meta .src-link:hover{color:var(--ink)}
 @media(max-width:560px){.slides{padding-left:24px}}
