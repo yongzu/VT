@@ -1,0 +1,146 @@
+/* VT 5주차 전시 포스터 기획 — IPS WK05(yongzu.github.io/IPS/WK05/) 스타일을 임시로 그대로 옮겼다(2026-10-13). 나중에 바꿀 예정.
+   툴바(로고) · 좌측 목차 · 섹션 펼침 · 행 · 스크롤 등장은 그 페이지의 값 그대로. 색은 #333/#555/#777/#999 + 흰색만 */
+:root{color-scheme:light;font-family:"Pretendard Variable",Pretendard,sans-serif;color:#777;background:#fff;font-synthesis:none;--ink:#333;--text:#555;--muted:#777;--faint:#999;--rule:#ededed;--line:#dcdcdc;--ease:cubic-bezier(.25,.1,.25,1);--ease-move:cubic-bezier(.22,1,.36,1);--ease-reveal:cubic-bezier(.16,1,.3,1);--box-shadow:0 6px 18px rgba(0,0,0,.06),0 1px 4px rgba(0,0,0,.03);--header-h:82px;--tab-w:200px;--title-w:350px;--body-w:600px;--page-w:calc(28px + var(--title-w) + var(--col-gap) + var(--body-w));--col-gap:28px;--node-w:228px;--node-gap-x:40px;--node-gap-y:14px}
+*{box-sizing:border-box}
+html{font-size:12pt;-webkit-text-size-adjust:100%;text-size-adjust:100%;scrollbar-gutter:stable;scroll-padding-top:calc(var(--header-h) + 24px)}
+body{margin:0;display:flex;flex-direction:column;min-height:100vh;background:#fff;font-family:"Pretendard Variable",Pretendard,sans-serif;font-size:12pt;font-weight:400;line-height:1.45;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,figure{margin:0;font:inherit}
+button,input{font:inherit;color:inherit;letter-spacing:inherit}button{cursor:pointer;background:none;border:0;padding:0;text-align:left}a{color:inherit;text-decoration:none}
+button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:1px solid #777;outline-offset:5px}
+::selection{background:#e8e8e8;color:#222}[hidden]{display:none!important}
+html.lenis,html.lenis body{height:auto}.lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+
+/* 툴바 — 로고만 붙어 있고, 흰 아이콘을 difference로 섞어 흰 바탕에서는 검게 보인다 */
+.toolbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:25px 32px;min-height:var(--header-h);background:transparent;pointer-events:none;mix-blend-mode:difference}
+.toolbar>*{pointer-events:auto}
+.toolbar img{filter:invert(1)}
+.brand{display:flex;align-items:center;flex-shrink:0}.brand img{display:block;width:auto;height:27px;object-fit:contain}
+.toolbar-link{margin-left:auto;color:#fff;filter:none}
+
+main{flex:1;margin:62px 0 160px}
+.page{width:min(1194px,calc(100% - 64px));margin-inline:auto}
+@media(min-width:1001px){.page{width:auto;margin-left:max(240px,(100% - var(--page-w)) / 2);margin-right:32px}}
+.identity h1{color:var(--ink)}.identity h1 .slash{padding-right:14px}
+.identity .identity-sub{margin-top:14px;color:var(--faint)}
+.page-shell{position:relative;margin-top:85px}
+
+/* 목차 — 왼쪽 끝이 로고와 맞고, 잉크 막대가 보고 있는 섹션으로 미끄러진다 */
+.sections{min-width:0}
+.toc-rail{position:absolute;top:0;bottom:0;left:32px;width:160px;pointer-events:none}
+.toc{position:sticky;top:calc(var(--header-h) + 40px);pointer-events:auto}
+.toc ol{list-style:none;margin:0;padding:0 0 0 14px;border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:2px}
+.toc a{position:relative;display:block;width:fit-content;padding:5px 0;color:var(--faint);transition:color 200ms,transform 340ms var(--ease-move)}
+.toc a:hover{color:var(--ink);transform:translateX(4px)}
+.toc a.is-active{color:var(--ink)}
+.toc-bar{position:absolute;left:0;top:0;width:2px;height:0;border-radius:2px;background:var(--ink);opacity:0;pointer-events:none;transition:transform 520ms var(--ease-move),height 520ms var(--ease-move),opacity 240ms}
+
+/* 섹션 — 제목을 누르면 접고 편다(0fr ↔ 1fr), 내용은 블러에서 떠오른다. 이 페이지는 처음에 펼쳐 둔다 */
+.log-section{scroll-margin-top:calc(var(--header-h) + 24px)}
+.log-section+.log-section{margin-top:25px}
+.section-toggle{display:flex;align-items:center;gap:10px;min-height:44px;width:var(--tab-w);color:var(--muted);transition:transform 340ms var(--ease-move),color 260ms}
+.section-toggle:hover,.section-toggle:focus-visible,.log-section[data-open="true"] .section-toggle{color:var(--ink)}
+.section-toggle:hover,.section-toggle:focus-visible{transform:translateX(10px)}
+.section-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 560ms var(--ease-reveal)}
+.log-section[data-open="true"]>.section-body{grid-template-rows:1fr;transition-duration:760ms}
+.section-clip{min-height:0;overflow:hidden}
+.section-clip>.content{padding-bottom:20px;opacity:0;filter:blur(8px);transition:opacity 400ms var(--ease),filter 560ms var(--ease-reveal)}
+.log-section[data-open="true"] .section-clip>.content{opacity:1;filter:none}
+.log-sign{position:relative;width:18px;height:24px;display:inline-flex;align-items:center;justify-content:center}
+.log-icon{width:1em;height:1em;object-fit:contain;opacity:.35;transition:opacity 200ms}
+.section-toggle:hover .log-icon,.section-toggle:focus-visible .log-icon,.log-section[data-open="true"] .log-icon{opacity:1}
+.scene-list,.qa-list{list-style:none;margin:0;padding:20px 0 0 28px}
+.section-meta{margin:0;padding:20px 0 0 28px;color:var(--faint);max-width:calc(28px + var(--title-w) + var(--col-gap) + var(--body-w));word-break:keep-all}
+
+/* 행 — 호버하면 잠깐 미리 보고, 누르면 고정(여러 개 가능), Esc로 모두 놓는다 */
+.row{display:grid;grid-template-columns:var(--tab-w) minmax(0,1fr);column-gap:var(--col-gap);align-items:start}
+.row-title{position:relative;display:flex;align-items:center;gap:10px;min-height:40px;padding:5px 0;width:fit-content;max-width:calc(var(--tab-w) - 10px);color:var(--muted);transition:transform 340ms var(--ease-move),color 260ms}
+.row-title:hover,.row-title:focus-visible,.row[data-open="true"]>.row-title{color:var(--ink);transform:translateX(10px)}
+.row{--arrow-gap:16px;--box-pad-y:4px;--box-pad-x:8px;--label-ml:calc(var(--arrow-gap) + var(--box-pad-x) - 13px)}
+.row-label{position:relative;margin-left:var(--label-ml);word-break:keep-all}
+.row-label::before{content:'';position:absolute;inset:calc(-1 * var(--box-pad-y)) calc(-1 * var(--box-pad-x));border-radius:10px;background:#fff;box-shadow:var(--box-shadow);opacity:0;transition:opacity 200ms;z-index:-1;pointer-events:none}
+.row-title:hover .row-label::before,.row-title:focus-visible .row-label::before,.row[data-open="true"]>.row-title .row-label::before{opacity:1}
+.bullet{width:14px;flex:0 0 14px;position:relative;align-self:center}
+.bullet::before{content:'';position:absolute;left:4px;top:50%;transform:translateY(-50%);display:block;width:5px;height:5px;background:#444;border-radius:50%;transition:opacity 260ms}
+.bullet::after{content:'→';position:absolute;left:-4px;top:50%;transform:translateY(-50%) translateX(-3px);color:var(--ink);opacity:0;transition:opacity 260ms,transform 340ms}
+.row-title:hover .bullet::before,.row-title:focus-visible .bullet::before,.row[data-open="true"]>.row-title .bullet::before{opacity:0}
+.row-title:hover .bullet::after,.row-title:focus-visible .bullet::after,.row[data-open="true"]>.row-title .bullet::after{opacity:1;transform:translateY(-50%)}
+.row-panel{display:grid;grid-template-rows:0fr;min-width:0;transition:grid-template-rows 480ms var(--ease-reveal)}
+.row-clip{min-height:0;overflow:hidden;display:grid;grid-template-columns:minmax(0,var(--body-w));column-gap:var(--col-gap);align-items:start}
+.row-clip>*{opacity:0;transform:translateY(-6px);filter:blur(6px);transition:opacity 240ms var(--ease),transform 480ms var(--ease-reveal),filter 480ms var(--ease-reveal)}
+.row[data-open="true"]>.row-panel{grid-template-rows:1fr}
+.row[data-open="true"] .row-clip>*{opacity:1;transform:none;filter:none;transition-delay:80ms}
+.copy{color:var(--text);line-height:1.75}
+.copy p{margin:0;word-break:keep-all;overflow-wrap:anywhere}.copy p+p{margin-top:12px}
+.copy .pick{color:var(--ink)}
+.copy .src{color:var(--faint)}
+.copy .note-line{color:var(--faint)}
+
+/* 늘 펼친 목록(문제의식 · 기준) — 제목 옆에 본문이 서 있다 */
+.scene-list .row-panel{grid-template-rows:1fr;transition:none}
+.scene-list .copy{padding:7px 0 10px}
+/* yongzu.github.io의 log는 올릴 때만 글이 보이지만, 이 페이지의 기준·문제의식은 늘 읽혀야 해서 처음부터 보인다 */
+.scene-list .row-clip>*{opacity:1;transform:none;filter:none}
+
+/* 펼쳐 읽는 목록(판정 · 인사이트) */
+.qa-list .row-title{min-height:52px;padding:10px 0}
+.qa-list .row{--box-pad-y:9px;--box-pad-x:15px}
+.qa-list .row-label::before{border-radius:12px}
+.qa-list .copy{padding:18px 0 38px}
+.qa-answer{color:var(--text);line-height:1.7}
+.copy .qa-follow{margin-top:24px;color:var(--ink);line-height:1.7}
+
+/* 맨 위로 */
+.back-to-top{position:fixed;right:32px;bottom:32px;z-index:60;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-size:18px;line-height:1;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.12);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity 240ms var(--ease),transform 240ms var(--ease),background 160ms}
+.back-to-top[data-shown="true"]{opacity:1;transform:none;pointer-events:auto}.back-to-top:hover{background:#000}
+
+/* 스크롤 등장 — 들어올 때 40px 올라오며 나타난다 */
+.has-reveal :is(.identity>*,.log-title,.row){transition:opacity 1s var(--ease-reveal) var(--reveal-delay,0ms),transform 1s var(--ease-reveal) var(--reveal-delay,0ms),border-color 200ms}
+.has-reveal :is(.identity>*,.log-title,.row):not([data-reveal="in"]){opacity:0;transform:translateY(40px)}
+
+.archive-footer{margin-top:auto;padding:54px max(32px,6vw);background:#f7f7f7;color:#888}.footer-identity{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.footer-identity img{display:block;width:auto;height:27px;object-fit:contain;margin-bottom:8px}.footer-identity p{margin:0;color:var(--ink)}.footer-identity a:hover{color:#222;text-decoration:underline;text-underline-offset:4px}
+
+:root{--phi-cursor:url("../assets/cursor-arrow.svg") 0 1;--phi-cursor-pointer:url("../assets/cursor-pointer.svg") 0 1;--phi-cursor-text:url("../assets/cursor-text.svg") 0 7}
+@media(pointer:fine){
+ html,body{cursor:var(--phi-cursor),auto}
+ a,button:not(:disabled),label,[role="button"],[tabindex]:not([tabindex="-1"]){cursor:var(--phi-cursor-pointer),pointer}
+}
+
+@media(max-width:1000px){.toc{display:none}}
+@media(max-width:800px){
+ main{margin-top:45px}
+ .page{width:calc(100% - 48px)}
+ .toolbar{padding:18px 24px}
+ :root{--header-h:80px}
+}
+@media(min-width:701px){.scene-list,.qa-list{--tab-w:var(--title-w)}}
+@media(max-width:700px){
+ .row{display:block}
+ .row-title{max-width:calc(100% - 10px)}
+ .row-clip{display:flex;flex-direction:column}
+ .scene-list .copy{padding:6px 0 20px calc(24px + var(--label-ml))}
+ .qa-list .copy{padding:14px 0 30px calc(24px + var(--label-ml))}
+ .section-meta{padding-left:24px}
+ .archive-footer{padding:40px 24px}
+ .back-to-top{right:20px;bottom:20px}
+}
+@media(max-width:560px){
+ .toolbar{padding:16px 20px;gap:12px}
+ :root{--header-h:72px}
+ .brand img{height:20px}
+ main{margin-top:38px}
+ .page{width:calc(100% - 40px)}
+ .page-shell{margin-top:58px}
+ .scene-list,.qa-list{padding-left:24px}
+ .section-meta{padding-left:24px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* VT 추가 — 슬라이드 이미지, 원고 표, 주석 */
+.slides{list-style:none;margin:0;padding:20px 0 0 28px;display:grid;gap:28px;max-width:calc(28px + var(--title-w) + var(--col-gap) + var(--body-w))}
+.slides figure{display:flex;flex-direction:column;gap:10px}
+.slides img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:var(--box-shadow)}
+.slides figcaption{color:var(--faint);font-size:10pt}
+.copy .k{color:var(--ink)}
+.copy ul{margin:0;padding-left:1.1em}.copy li+li{margin-top:6px}
+.copy .muted{color:var(--faint)}
+@media(max-width:560px){.slides{padding-left:24px}}

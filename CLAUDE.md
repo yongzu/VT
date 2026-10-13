@@ -55,7 +55,8 @@ Phi Institute of Design의 **Visual Translation** 수업 과제를 기록하는 
 
 - 기획: [POSTER.md](POSTER.md)
 - TEAM 04 (3인): 이가은 · 임창균 · 조용주(그래픽 메이커). 제목은 확정, 기획 의도와 참여 작가는 바꿀 수 있다
-- 진행 기록: `1013/`부터
+- 진행 기록: `1013/`부터 · 제출 슬라이드 `1013/slides/`
+- 웹페이지(임시): `WK05/` → https://yongzu.github.io/VT/WK05/ (IPS 5주차 스타일을 임시로 씀, 나중에 바꿈)
 
 ## 지난 프로젝트: 앨범 「21°C」
 
