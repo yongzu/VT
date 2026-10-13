@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VT 5주차 · 연결에 스며든 사랑 - 발표 슬라이드 전체판</title>
+<title>VT 6주차 · 연결에 스며든 사랑 - 발표 슬라이드 전체판</title>
 <link rel="icon" type="image/png" href="../../assets/mark.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <!--
-  전체판(13장): POSTER.md의 기획 내용을 줄이지 않고 담은 1920×1080 슬라이드. 스타일과 스크립트는 압축판(../deck/)과 같다.
+  전체판(10장): 히어로, 개요, 서문, 작가 3, 포스터 원고, 키워드, 의사결정 1장, 팀원이 채울 빈 스케치 장. 1920×1080. 스타일은 압축판(../deck/)과 같은 토큰을 쓴다.
   보기: 이 페이지 / 한 장만: ?s=3 (PNG 내보내기용) / 인쇄: 한 장이 한 쪽(PDF 내보내기용)
 -->
 <style>
@@ -15,24 +15,20 @@
   --ink:#333;--ink-2:#333333b3;--ink-3:#33333366;--rule:#e3e3e3;--fill:#f8f9fa;--strong:#141414;
   --t-tight:-.03em;--t-body:-.02em;
   --display:124px;--heading:60px;--subheading:40px;--lead:28px;--title:27px;--label:20px;--body:21px;
-  --w:1920px;--h:1080px;--mx:120px;--gap:56px}
+  --w:1920px;--h:1080px;--mx:120px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:#ececec}
 body{font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all;letter-spacing:var(--t-body)}
 ol,ul{list-style:none}
+img{display:block}
 
 /* 보기 화면: 화면 폭에 맞춰 줄여 세로로 늘어놓는다 */
 .deck{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 24px 80px}
 .frame{width:min(1600px,100%);aspect-ratio:16/9;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08)}
 .frame>.slide{position:absolute;left:0;top:0;transform-origin:0 0;transform:scale(var(--k,1))}
 
-/* 슬라이드 틀 - 위: BI 헤더처럼 팀 이름 + 장 목록(지금 장은 회색 면), 아래: 쪽 번호 */
-.slide{width:var(--w);height:var(--h);background:#fff;position:relative;padding:132px var(--mx) 92px;display:flex;flex-direction:column}
-.bar{position:absolute;top:36px;left:var(--mx);right:var(--mx);display:flex;align-items:center;justify-content:space-between}
-.bar .team{font-size:20px;font-weight:700;letter-spacing:var(--t-tight)}
-.bar nav{display:flex;gap:6px}
-.bar nav span{font-size:16px;color:var(--ink-3);padding:7px 14px;border-radius:999px;font-weight:500}
-.bar nav span.on{color:var(--ink);background:var(--fill)}
+/* 슬라이드 틀 - 위에는 아무것도 두지 않고, 아래에 수업 이름과 쪽 번호 */
+.slide{width:var(--w);height:var(--h);background:#fff;position:relative;padding:96px var(--mx) 92px;display:flex;flex-direction:column}
 .foot{position:absolute;bottom:36px;left:var(--mx);right:var(--mx);display:flex;justify-content:space-between;font-size:16px;color:var(--ink-3);font-weight:500}
 
 /* 타이포 단계 */
@@ -43,104 +39,83 @@ ol,ul{list-style:none}
 .lead{font-size:var(--lead);color:var(--ink-2);letter-spacing:var(--t-tight);line-height:1.45}
 .title{font-size:var(--title);font-weight:700;letter-spacing:var(--t-tight);line-height:1.2}
 .body{font-size:var(--body);color:var(--ink-2);line-height:1.7}
-.body+.body{margin-top:14px}
 .ink{color:var(--ink)}
+.slide>.heading{margin-top:12px}
 
-/* 라벨-값 목록(BI의 과정 개요 표) */
+/* 라벨-값 목록 */
 .dl{border-top:1px solid var(--rule)}
-.dl>div{display:grid;grid-template-columns:var(--dt,170px) 1fr;column-gap:24px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.dl>div{display:grid;grid-template-columns:var(--dt,170px) 1fr;column-gap:24px;padding:20px 0;border-bottom:1px solid var(--rule);align-items:baseline}
 .dl dt{font-size:var(--label);font-weight:500;color:var(--ink-3);letter-spacing:-.03em}
-.dl dd{font-size:var(--body);line-height:1.6;color:var(--ink)}
-.dl dd .sub{display:block;color:var(--ink-2);font-size:19px;margin-top:2px}
-.dl dd b{font-weight:700}
+.dl dd{font-size:22px;line-height:1.6;color:var(--ink)}
+.dl dd .sub{display:block}
 
-/* 번호 행(BI의 역량 · 태도 목록) */
-.rows>li{display:grid;grid-template-columns:64px 1fr;padding:22px 0;border-bottom:1px solid var(--rule)}
-.rows>li:first-child{border-top:1px solid var(--rule)}
-.rows .no{font-size:var(--label);color:var(--ink-3);font-weight:500;padding-top:4px}
-.rows .en{font-size:18px;color:var(--ink-3);font-weight:500;margin-left:10px;letter-spacing:-.03em}
-.rows .body{margin-top:8px}
+/* 히어로 - 제목, 메인 주제, 질문만 */
+.hero .head{margin-top:150px}
+.hero .lead{margin-top:28px}
+.hero .msg{margin-top:auto;margin-bottom:24px}
+.hero .msg .subheading{margin-top:12px;max-width:1240px;font-size:44px}
+.hero .msg .title{margin-top:12px;font-size:30px}
+.hero .msg>.label:not(:first-child){margin-top:48px}
 
-/* 알약(BI 세그먼트) */
-.pills{display:inline-flex;gap:4px;padding:6px;background:var(--fill);border-radius:999px}
-.pills span{font-size:18px;font-weight:700;color:var(--ink-3);padding:10px 20px;border-radius:999px}
-.pills span.on{background:var(--ink);color:#fff}
+/* ① 개요 */
+.s1 .ov{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;row-gap:40px;margin-top:52px}
+.s1 .ov>div{border-top:1px solid var(--rule);padding-top:20px}
+.s1 .ov .title{display:block}
+.s1 .ov .title i{font-style:normal;color:var(--ink-3);margin-right:12px}
+.s1 .ov .body{margin-top:12px;font-size:20.5px;line-height:1.7}
 
-/* ① */
-.s1 .top{display:grid;grid-template-columns:auto 1fr;column-gap:96px;align-items:start}
-.s1 .top .thesis-rest{margin-top:18px;font-size:30px;line-height:1.42}
-.s1 .en{margin-top:18px}
-.s1 .main{display:grid;grid-template-columns:1fr 1fr;column-gap:96px;margin-top:52px;flex:1}
-.s1 .display{font-size:84px;white-space:nowrap}
-.s1 .read .dl{--dt:110px;margin-top:22px}
-.s1 .ask{margin-top:30px;padding:24px 30px;background:var(--fill);border-radius:16px}
-.s1 .ask .title{margin-top:8px}
-.s1 .ask .body{margin-top:12px}
-.s1 .rows>li{padding:16px 0}
-.s1 .rows .body{font-size:20px;line-height:1.62}
+/* ② 서문 */
+.s2 .main{display:grid;grid-template-columns:.8fr 1.2fr;column-gap:120px;margin-top:40px;align-items:start}
+.s2 .prose .body{font-size:22px;line-height:1.8}
+.s2 .prose .body+.body{margin-top:24px}
+.s2 .prose .title{margin-top:30px;font-size:24px;line-height:1.6}
 
-/* ② */
-.s2 .main{display:grid;grid-template-columns:.9fr 1.1fr;column-gap:120px;flex:1;align-items:start}
-.s2 .prose .body{font-size:23px;line-height:1.8}
-.s2 .prose .body+.body{margin-top:22px}
-.s2b .lead{margin-top:14px;max-width:1100px}
-.arts{display:grid;grid-template-columns:repeat(3,1fr);column-gap:64px;margin-top:48px}
-.arts .art{display:flex;flex-direction:column}
-.art .bio{margin:22px 0 28px;font-size:21px;line-height:1.8;color:var(--ink-2)}
-.art .facts2{margin-top:auto;padding-top:0;border-top:1px solid var(--rule)}
-.art .facts2>div{display:grid;grid-template-columns:92px 1fr;column-gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.art .facts2 dt{font-size:17px;font-weight:500;color:var(--ink-3)}
-.art .facts2 dd{font-size:18px;color:var(--ink)}
-.arts .art{margin-top:0}
-.arts .art+.art{margin-top:0}
-.art .note{margin-top:14px;font-size:18px;line-height:1.6;color:var(--ink-3)}
-.s2 .subheading{margin-top:18px}
-.s2 .prose{margin-top:34px}
-.s2 .q{margin-top:30px}
-.s2 .crit{margin-top:14px}
-.art{margin-top:26px;padding-top:26px;border-top:1px solid var(--ink)}
-.art+.art{margin-top:34px}
-.art .who{display:flex;flex-direction:column;gap:6px}
-.art .meta{font-size:18px;color:var(--ink-3);font-weight:500}
-.art .dl{--dt:92px;margin-top:14px;border-top:0}
-.art .dl>div{padding:12px 0}
-.art .dl dd{font-size:19px;line-height:1.6}
-.art .dl dt{font-size:18px}
-.s2 .more{margin-top:22px;font-size:19px;color:var(--ink-3);font-weight:500}
+/* ② 참여 작가 */
+.sa .main{display:grid;grid-template-columns:590px 1fr;column-gap:120px;margin-top:44px}
+.sa .photo{width:590px;height:650px;object-fit:cover}
+.sa .info{border-top:1px solid var(--rule);padding-top:40px}
+.sa .name{font-size:36px;font-weight:700;letter-spacing:var(--t-tight)}
+.sa .role{margin-top:6px;font-size:20px;color:var(--ink-2)}
+.sa .bio{margin-top:24px;max-width:780px;font-size:23px;line-height:1.66;color:var(--ink-2)}
+.sa .works{display:flex;gap:20px;margin-top:44px;align-items:flex-start}
+.sa .works img{height:244px;width:auto}
+.sa .works .book{box-shadow:0 8px 28px rgba(0,0,0,.12)}
 
-/* ③ */
-.s3 .main{display:grid;grid-template-columns:1fr 1.15fr;column-gap:104px;flex:1}
+/* ③ 포스터 원고 */
+.s3 .main{display:grid;grid-template-columns:1fr 1.15fr;column-gap:104px;flex:1;margin-top:40px}
 .s3 .display{font-size:112px}
-.s3 .lead{margin-top:20px}
-.s3 .when{margin-top:56px}
-.s3 .when .heading{margin-top:10px;font-weight:500}
-.s3 .name{margin-top:56px}
-.s3 .pills{margin-top:16px;flex-wrap:wrap}
-.s3 .name .body{margin-top:16px}
-.s3 .dl{--dt:150px;align-self:start}
-.s3 .tbd{color:var(--ink-3)}
+.s3 .lead{margin-top:28px}
+.s3 .when{margin-top:110px}
+.s3 .when .heading{margin-top:16px}
+.s3 .when .body{margin-top:18px;font-size:24px;color:var(--ink);line-height:1.6}
+.s3 .dl{--dt:180px;align-self:start}
 
-/* ④ */
-.s4 .top{display:flex;justify-content:space-between;align-items:end}
-.kt{margin-top:34px;border-top:1px solid var(--ink)}
-.kt .h,.kt li{display:grid;grid-template-columns:56px 300px 1fr 1fr;column-gap:40px}
-.kt .h{padding:14px 0;border-bottom:1px solid var(--rule)}
-.kt li{padding:15px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.kt .no{font-size:var(--label);color:var(--ink-3);font-weight:500}
-.kt .k .title{font-size:30px}
-.kt .k .label{display:block;margin-top:6px;font-size:18px}
-.kt .body{font-size:19px;line-height:1.58}
-.notes{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;margin-top:auto;padding-top:24px}
-.notes .body{margin-top:8px;font-size:19px}
+/* ④ 키워드 */
+.s4 .lead{margin-top:20px}
+.kw{margin-top:56px;border-top:1px solid var(--rule)}
+.kw li{display:grid;grid-template-columns:96px 424px 1fr;padding:30px 0 30px;border-bottom:1px solid var(--rule);align-items:baseline}
+.kw .no{font-size:var(--label);color:var(--ink-3);font-weight:500}
+.kw .k{font-size:31px;font-weight:700;letter-spacing:var(--t-tight);line-height:1.5}
+.kw .k span{display:block}
+.kw .body{font-size:23px;color:var(--ink)}
 
-/* ⑤ */
-.s5 .flow{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
-.s5 .flow span{font-size:19px;font-weight:500;padding:8px 16px;border-radius:999px;background:var(--fill);color:var(--ink)}
-.s5 .flow i{font-style:normal;color:var(--ink-3);font-size:18px}
-.dec{display:grid;grid-template-columns:.85fr 1.1fr 1.15fr .9fr;column-gap:44px;margin-top:44px;flex:1}
-.dec h3{font-size:22px;font-weight:700;letter-spacing:var(--t-tight);padding-bottom:14px;border-bottom:1px solid var(--ink)}
-.dec li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:19px;line-height:1.5;color:var(--ink)}
-.dec li .r{display:block;margin-top:3px;color:var(--ink-2);font-size:17.5px}
+/* ⑤ 의사결정 - 왼쪽 한 칸은 기준 · 방식 · 설득 스케치, 오른쪽 세 칸은 대안 */
+.s5 .main{display:grid;grid-template-columns:repeat(4,1fr);column-gap:48px;margin-top:40px;align-items:start}
+.s5 .sub .title{font-size:24px}
+.s5 .sub+.sub{margin-top:32px}
+.num{margin-top:12px;counter-reset:n}
+.num li{display:grid;grid-template-columns:24px 1fr;font-size:19px;line-height:1.55;color:var(--ink);counter-increment:n}
+.num li::before{content:counter(n) "."}
+.num li+li{margin-top:4px}
+.s5 figure{margin-top:32px}
+.s5 figure img{width:100%;aspect-ratio:627/461;object-fit:contain;background:var(--fill)}
+.s5 figcaption{margin-top:12px;text-align:center;font-size:17px;color:var(--ink-2)}
+.alt .tab{padding:14px;text-align:center;font-size:21px;color:var(--ink-2);background:var(--fill);letter-spacing:var(--t-tight)}
+.alt.on .tab{background:var(--ink);color:#fff;font-weight:700}
+.alt .pic{height:170px;margin-top:14px;display:flex;align-items:center;justify-content:center}
+.alt .pic img{max-width:100%;max-height:100%}
+.alt .body{margin-top:14px;font-size:18px;line-height:1.58;color:var(--ink)}
+.alt .why{margin-top:8px;font-size:18px;line-height:1.58;color:var(--ink-2)}
 
 /* 한 장만(?s=N) */
 html.single,html.single body{background:#fff;width:1920px;height:1080px;overflow:hidden}
@@ -156,287 +131,179 @@ html.single .frame:not(.on){display:none}
  .frame>.slide{transform:none}
 }
 </style>
-<style>
-/* 전체판 추가 - 압축판과 같은 토큰 위에 글이 많은 장을 위한 틀만 더한다 */
-.full .g2{display:grid;grid-template-columns:1fr 1fr;column-gap:96px;margin-top:44px;flex:1;align-items:start}
-.full .g3{display:grid;grid-template-columns:repeat(3,1fr);column-gap:56px;margin-top:40px;flex:1;align-items:start}
-.full .blk+.blk{margin-top:34px}
-.full .blk .title{display:block;margin-bottom:10px}
-.full .blk .body{font-size:21px;line-height:1.78}
-.full .quote{padding:26px 30px;background:var(--fill);border-radius:16px}
-.full .quote .title{margin-top:8px}
-.full .tbl{margin-top:34px;border-top:1px solid var(--ink)}
-.full .tbl .tr{display:grid;column-gap:36px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.full .tbl .th{padding:12px 0}
-.full .tbl .th span{font-size:18px;font-weight:500;color:var(--ink-3)}
-.full .tbl .c1{font-size:19px;font-weight:700}
-.full .tbl .c2{font-size:19px;line-height:1.6;color:var(--ink)}
-.full .tbl .c3{font-size:18px;line-height:1.6;color:var(--ink-2)}
-.full .items>li{padding:16px 0;border-bottom:1px solid var(--rule)}
-.full .items>li:first-child{border-top:1px solid var(--ink)}
-.full .items .t{display:block;font-size:20px;font-weight:700;letter-spacing:var(--t-tight)}
-.full .items .d{display:block;margin-top:6px;font-size:18.5px;line-height:1.62;color:var(--ink-2)}
-.full .items .r{display:block;margin-top:6px;font-size:18.5px;line-height:1.55;color:var(--ink)}
-.full .src{font-size:16px;color:var(--ink-3);margin-top:10px}
-.full .art .bio{font-size:20px;line-height:1.75}
-.full .dl.tight>div{padding:13px 0}
-.full .dl.tight dd .sub{margin-top:0}
-</style>
 </head>
 <body>
 <main class="deck">
 
-<div class="frame"><section class="slide full " aria-label="① 전시 제목과 주제의식">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span class="on">① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">① 전시 제목 및 콘셉트 기획 - 제목과 주제의식</p>
-  <h2 class="heading" style="margin-top:12px">연결에 스며든 사랑</h2>
-  <p class="lead" style="margin-top:10px">Sarang Within Connection · TEAM 04 이가은 · 임창균 · 조용주</p>
-  <div class="g2">
-    <div>
-      <div class="blk"><p class="label">메인 주제</p><p class="subheading" style="margin-top:10px">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다.</p></div>
-      <div class="blk"><p class="label">관객에게 건네는 질문</p><p class="title" style="margin-top:10px">"당신 안에는 누구의 모습이 남아 있나요?"</p></div>
-    </div>
-    <div>
-      <ol class="rows">
-        <li><span class="no">01</span><div><span class="title">주제의식 하나</span><p class="body">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 겹친 넓이다.</p></div></li>
-        <li><span class="no">02</span><div><span class="title">주제의식 둘</span><p class="body">벤다이어그램처럼 수학적으로 딱 나뉘는 것이 아니라, 스며들고 번지면서 서로에게 연결된다.</p></div></li>
-        <li><span class="no">→</span><div><span class="title">하나로 합침</span><p class="body">'겹친 넓이'를 '스며든 넓이'로 바꿔 두 주제의식을 한 문장에 담았다. 넓이는 남기되, 선을 그어서가 아니라 번져서 생긴 넓이다.</p></div></li>
-        <li><span class="no">○</span><div><span class="title">출발점이 된 공식</span><p class="body">나와 대상의 연결 = 세계의 공유 = 사랑 / 교집합의 크기 = 스며드는 정도 = 관계의 깊이. 사람은 각자의 세계를 가지고 있고, 관계를 맺으면 타인의 세계에 들어간다. 이후 딱 나뉘는 교집합이 아니라 번지며 스며드는 겹침으로 고쳐 잡았다.</p></div></li>
-      </ol>
-    </div>
+<div class="frame"><section class="slide hero" aria-label="연결에 스며든 사랑">
+  <div class="head">
+    <h1 class="display">연결에 스며든 사랑</h1>
+    <p class="lead">Sarang Within Connection · TEAM 04 이가은 · 임창균 · 조용주</p>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>01 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="① 제목 해석">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span class="on">① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">① 전시 제목 및 콘셉트 기획 - 제목 해석</p>
-  <h2 class="heading" style="margin-top:12px">세 단어를 하나의 관계로 읽었다</h2>
-  <div class="g2">
-    <dl class="dl" style="--dt:130px">
-      <div><dt>연결</dt><dd>나와 타인이 각자의 세계를 서로에게 열어 공유하는 일이다.</dd></div>
-      <div><dt>스며든</dt><dd>그 공유가 선으로 딱 나뉘는 교집합이 아니라, 번지고 섞이며 경계가 흐려지는 방식으로 일어난다는 뜻이다.</dd></div>
-      <div><dt>사랑</dt><dd>그렇게 스며든 넓이다. 그래서 우리는 사랑을 연결 바깥에 있는 특별한 감정이 아니라, 연결 안에 이미 스며 있는 것으로 해석했다.</dd></div>
-    </dl>
-    <div>
-      <div class="blk"><p class="label">전하고 싶은 생각</p><p class="body ink" style="margin-top:10px;font-size:24px">내 것이라 여긴 말투와 취향, 습관 속에 타인이 있다. 타인을 돌아보는 일은 곧 나를 이해하는 일이다.</p></div>
-      <div class="blk"><p class="label">전하고 싶은 감각</p><p class="body ink" style="margin-top:10px;font-size:24px">익숙한 나의 모습에서 문득 누군가를 발견하는 순간의 낯설고도 따뜻한 느낌.</p></div>
-      <div class="blk quote"><p class="label">관객에게 건네는 질문</p><p class="title">"당신 안에는 누구의 모습이 남아 있나요?"</p></div>
-    </div>
+  <div class="msg">
+    <p class="label">메인 주제</p>
+    <p class="subheading">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다.</p>
+    <p class="label">관객에게 건네는 질문</p>
+    <p class="title">"당신 안에는 누구의 모습이 남아 있나요?"</p>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>02 / 13</span></div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>01 / 10</span></div>
 </section></div>
-<div class="frame"><section class="slide full " aria-label="① 전시 개요">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span class="on">① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">① 전시 제목 및 콘셉트 기획 - 전시 개요</p>
-  <h2 class="heading" style="margin-top:12px">전시 개요 01 - 04</h2>
-  <div class="g2" style="row-gap:30px;margin-top:36px">
-    <div class="blk" style="margin-top:0"><p class="label">01</p><span class="title">주제와 질문</span><p class="body" style="font-size:19.5px;line-height:1.72">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다. 이 전시는 사랑을 누군가를 향한 감정이 아닌, 서로 다른 세계가 만나 겹치고 스며들며 서로를 바꾸어 가는 과정으로 바라본다. 우리는 누군가와 관계를 맺으며 상대의 일부를 자신의 세계에 받아들이고, 그 과정에서 이전과는 다른 존재가 된다. 작가들은 두 세계의 겹침과 그 사이에서 생겨나는 새로운 흔적을 통해, 사랑이란 서로에게 어떤 변화를 남기는가를 묻는다. 그리고 그 물음을 관객에게 건넨다. "당신 안에는 누구의 모습이 남아 있나요?"</p></div>
-    <div class="blk" style="margin-top:0"><p class="label">02</p><span class="title">작가의 관점</span><p class="body" style="font-size:19.5px;line-height:1.72">작가는 관계를 완성된 상태가 아니라 계속 진행 중인 과정으로 보고, 그 과정이 남긴 흔적에 주목한다. 두 세계가 만나는 자리에서는 서로의 습관과 언어, 기억이 천천히 스며들어 어느 한쪽의 것도 아닌 새로운 색이 생겨난다. 우리는 타인과 함께하며 서로를 닮아가지만, 동시에 이전에는 몰랐던 자신의 모습과 새로운 가능성을 발견하기도 한다. 작가는 이러한 변화를 단순히 서로 닮아가는 현상이 아니라, 각자의 고유함을 간직한 채 서로의 세계를 넓혀가는 과정으로 바라본다.</p></div>
-    <div class="blk" style="margin-top:0"><p class="label">03</p><span class="title">관계와 맥락</span><p class="body" style="font-size:19.5px;line-height:1.72">우리는 수많은 사람과 연결되어 살아가지만, 그 연결이 자신에게 무엇을 남겼는지는 쉽게 인식하지 못한다. 누군가에게서 배운 말투, 함께하며 생겨난 취향, 무심코 닮아버린 습관처럼 사랑의 흔적은 일상 곳곳에 스며들어 있다. 이 전시는 사랑을 연인 사이의 특별한 감정에 한정하지 않고, 타인과 관계를 맺으며 서로의 일부가 되어가는 보편적인 경험으로 확장한다. 자신의 것이라고 여겼던 취향과 가치관 속에서 타인의 흔적을 발견하고, 우리가 누구와 연결되어 왔는지를 돌아보는 일이 곧 자기 자신을 이해하는 또 다른 방법이 될 수 있음을 이야기한다.</p></div>
-    <div class="blk" style="margin-top:0"><p class="label">04</p><span class="title">대상 관객</span><p class="body" style="font-size:19.5px;line-height:1.72">이 전시는 '나'라는 사람을 이해하고 싶은 이들을 위한 전시다. 자신의 취향과 가치관이 어디서 시작되었는지 궁금한 사람들. 지금의 나를 만든 것이 무엇인지 돌아보고 싶은 사람에게 타인에게서 받은 영향을 되짚어 볼 기회를 건넨다. 관객은 전시를 통해 자신의 말투와 취향, 습관 속에 남아 있는 누군가의 모습을 떠올리고, 그 흔적들이 모여 지금의 자신을 이루고 있음을 발견하게 된다. 나아가 타인을 돌아보는 경험이 자기 자신을 새롭게 이해하는 계기가 되기를 기대한다.</p></div>
+
+<div class="frame"><section class="slide s1" aria-label="① 전시 개요">
+  <p class="label">① 콘셉트 기획</p>
+  <h2 class="heading">전시 개요</h2>
+  <div class="ov">
+    <div><span class="title"><i>01</i>주제와 질문</span><p class="body">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다. 이 전시는 사랑을 누군가를 향한 감정이 아닌, 서로 다른 세계가 만나 겹치고 스며들며 서로를 바꾸어 가는 과정으로 바라본다. 우리는 누군가와 관계를 맺으며 상대의 일부를 자신의 세계에 받아들이고, 그 과정에서 이전과는 다른 존재가 된다. 작가들은 두 세계의 겹침과 그 사이에서 생겨나는 새로운 흔적을 통해, 사랑이란 서로에게 어떤 변화를 남기는가를 묻는다. 그리고 그 물음을 관객에게 건넨다. "당신 안에는 누구의 모습이 남아 있나요?"</p></div>
+    <div><span class="title"><i>02</i>작가의 관점</span><p class="body">작가는 관계를 완성된 상태가 아니라 계속 진행 중인 과정으로 보고, 그 과정이 남긴 흔적에 주목한다. 두 세계가 만나는 자리에서는 서로의 습관과 언어, 기억이 천천히 스며들어 어느 한쪽의 것도 아닌 새로운 색이 생겨난다. 우리는 타인과 함께하며 서로를 닮아가지만, 동시에 이전에는 몰랐던 자신의 모습과 새로운 가능성을 발견하기도 한다. 작가는 이러한 변화를 단순히 서로 닮아가는 현상이 아니라, 각자의 고유함을 간직한 채 서로의 세계를 넓혀가는 과정으로 바라본다.</p></div>
+    <div><span class="title"><i>03</i>관계와 맥락</span><p class="body">우리는 수많은 사람과 연결되어 살아가지만, 그 연결이 자신에게 무엇을 남겼는지는 쉽게 인식하지 못한다. 누군가에게서 배운 말투, 함께하며 생겨난 취향, 무심코 닮아버린 습관처럼 사랑의 흔적은 일상 곳곳에 스며들어 있다. 이 전시는 사랑을 연인 사이의 특별한 감정에 한정하지 않고, 타인과 관계를 맺으며 서로의 일부가 되어가는 보편적인 경험으로 확장한다. 자신의 것이라고 여겼던 취향과 가치관 속에서 타인의 흔적을 발견하고, 우리가 누구와 연결되어 왔는지를 돌아보는 일이 곧 자기 자신을 이해하는 또 다른 방법이 될 수 있음을 이야기한다.</p></div>
+    <div><span class="title"><i>04</i>대상 관객</span><p class="body">이 전시는 '나'라는 사람을 이해하고 싶은 이들을 위한 전시다. 자신의 취향과 가치관이 어디서 시작되었는지 궁금한 사람들. 지금의 나를 만든 것이 무엇인지 돌아보고 싶은 사람에게 타인에게서 받은 영향을 되짚어 볼 기회를 건넨다. 관객은 전시를 통해 자신의 말투와 취향, 습관 속에 남아 있는 누군가의 모습을 떠올리고, 그 흔적들이 모여 지금의 자신을 이루고 있음을 발견하게 된다. 나아가 타인을 돌아보는 경험이 자기 자신을 새롭게 이해하는 계기가 되기를 기대한다.</p></div>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>03 / 13</span></div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>02 / 10</span></div>
 </section></div>
-<div class="frame"><section class="slide full " aria-label="② 전시 서문">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span class="on">② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">② 전시 서문</p>
-  <h2 class="heading" style="margin-top:12px">연결에 스며든 사랑</h2>
-  <div class="g2" style="grid-template-columns:.8fr 1.2fr">
-    <div>
-      <p class="subheading">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다.</p>
-      <p class="label" style="margin-top:40px">참여 작가 문단</p><p class="body" style="margin-top:8px">작성 예정 - 세 작가가 왜 한 전시에서 만나는지</p>
-    </div>
+
+<div class="frame"><section class="slide s2" aria-label="② 전시 서문">
+  <p class="label">② 서문 · 작가</p>
+  <div class="main">
+    <p class="subheading">사랑의 깊이는 좋아하는 마음의 크기가 아니라, 서로의 세계가 스며든 넓이다.</p>
     <div class="prose">
-      <p class="body" style="font-size:22px;line-height:1.8">이 전시는 사랑을 누군가를 향한 감정이 아닌, 서로 다른 세계가 만나 겹치고 스며들며 서로를 바꾸어 가는 과정으로 바라본다. 누군가와 연결되는 순간, 두 세계는 선을 긋듯 나뉘지 않고 조금씩 번지며 섞여 든다.</p>
-      <p class="body" style="font-size:22px;line-height:1.8;margin-top:20px">우리는 누군가와 관계를 맺으며 상대의 습관과 언어, 기억을 자신의 세계에 받아들이고, 그 과정에서 어느 한쪽의 것도 아닌 새로운 흔적이 생겨난다. 서로를 닮아 가는 동시에, 이전에는 몰랐던 자신의 모습을 발견하기도 한다. 이 전시는 이러한 변화를 단순히 닮아 가는 현상이 아니라, 각자의 고유함을 간직한 채 서로의 세계를 넓혀 가는 과정으로 본다.</p>
-      <p class="body" style="font-size:22px;line-height:1.8;margin-top:20px">누군가에게서 배운 말투, 함께하며 생겨난 취향, 무심코 닮아버린 습관처럼 사랑의 흔적은 일상 곳곳에 남아 있다. 하지만 우리는 그것을 쉽게 인식하지 못한다. 전시는 사랑을 연인 사이의 감정에 한정하지 않고, 친구와 가족, 지나간 인연까지 아우르는 보편적인 경험으로 확장한다. 자신의 것이라 여겼던 취향과 가치관 속에서 타인의 흔적을 발견하는 일은 지금의 나를 이해하는 또 다른 방법이 될 수 있다.</p>
-      <p class="title" style="margin-top:28px">전시장을 걷는 동안 이 질문에 천천히 답해 보길 바란다. "당신 안에는 누구의 모습이 남아 있나요?"</p>
+      <p class="body">이 전시는 사랑을 누군가를 향한 감정이 아닌, 서로 다른 세계가 만나 겹치고 스며들며 서로를 바꾸어 가는 과정으로 바라본다. 누군가와 연결되는 순간, 두 세계는 선을 긋듯 나뉘지 않고 조금씩 번지며 섞여 든다.</p>
+      <p class="body">우리는 누군가와 관계를 맺으며 상대의 습관과 언어, 기억을 자신의 세계에 받아들이고, 그 과정에서 어느 한쪽의 것도 아닌 새로운 흔적이 생겨난다. 서로를 닮아 가는 동시에, 이전에는 몰랐던 자신의 모습을 발견하기도 한다. 이 전시는 이러한 변화를 단순히 닮아 가는 현상이 아니라, 각자의 고유함을 간직한 채 서로의 세계를 넓혀 가는 과정으로 본다.</p>
+      <p class="body">누군가에게서 배운 말투, 함께하며 생겨난 취향, 무심코 닮아버린 습관처럼 사랑의 흔적은 일상 곳곳에 남아 있다. 하지만 우리는 그것을 쉽게 인식하지 못한다. 전시는 사랑을 연인 사이의 감정에 한정하지 않고, 친구와 가족, 지나간 인연까지 아우르는 보편적인 경험으로 확장한다. 자신의 것이라 여겼던 취향과 가치관 속에서 타인의 흔적을 발견하는 일은 지금의 나를 이해하는 또 다른 방법이 될 수 있다.</p>
+      <p class="title">전시장을 걷는 동안 이 질문에 천천히 답해 보길 바란다.<br>"당신 안에는 누구의 모습이 남아 있나요?"</p>
     </div>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>04 / 13</span></div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>03 / 10</span></div>
 </section></div>
-<div class="frame"><section class="slide full " aria-label="② 참여 작가 목록">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span class="on">② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">② 참여 작가 목록 - 작품 하나가 아니라 연작이나 프로젝트로 주제를 다뤄 온 작가. 키워드를 작가마다 나눠 맡기지 않고 전시 전체로 본다</p>
-  <h2 class="heading" style="margin-top:12px">타인과의 연결이 나를 어떻게 바꾸는가</h2>
-  <div class="arts" style="margin-top:40px">
-    <div class="art" style="display:flex;flex-direction:column;margin-top:0">
-      <div class="who"><span class="heading" style="font-size:40px">카럴 마르턴스</span><span class="meta">Karel Martens · 1939 · 네덜란드 · 그래픽 디자이너, 예술가</span></div>
-      <p class="bio" style="margin:18px 0 22px">1939년 네덜란드에서 태어난 그래픽 디자이너이자 예술가다. 타이포그래피, 북디자인, 교육 등 다양한 분야에서 활동해 왔다. 누군가 사용했던 종이 위에 색과 형태를 반복해서 찍어내는 모노프린트 작업으로 잘 알려져 있다. 오래된 기록 위에 새로운 흔적을 쌓으며, 서로 다른 시간과 이미지가 만나 만들어내는 우연한 아름다움을 탐구한다. 그의 작업은 타인의 흔적 위에 자신의 색이 더해지며 새로운 세계가 탄생한다는 전시의 메시지와 맞닿아 있다.</p>
-      <dl class="facts2" style="margin-top:auto"><div><dt>대표 작업</dt><dd>모노프린트 연작 · 『Tokyo Papers』</dd></div><div><dt>키워드</dt><dd>겹침 · 흔적</dd></div></dl>
-      <p class="src">출처: Wikipedia · Carpenter Center · Tokyo Papers</p>
-    </div>
-    <div class="art" style="display:flex;flex-direction:column;margin-top:0">
-      <div class="who"><span class="heading" style="font-size:40px">김애란</span><span class="meta">Kim Ae-ran · 1980 · 소설가</span></div>
-      <p class="bio" style="margin:18px 0 22px">1980년생 소설가로, 『두근두근 내 인생』, 『비행운』, 『바깥은 여름』 등을 집필했다. 일상에서 마주하는 사람들의 삶과 감정을 섬세한 언어로 풀어내며, 평범한 순간에 깃든 관계의 의미를 발견한다. 첫 산문집 『잊기 좋은 이름』에서는 자신을 지나온 사람과 풍경, 기억을 돌아보며 지금의 자신을 이루는 수많은 이름을 불러낸다. 타인을 기억하고 이해하는 일이 곧 자신을 이해하는 과정이 될 수 있음을 이야기한다.</p>
-      <dl class="facts2" style="margin-top:auto"><div><dt>대표 작업</dt><dd>산문집 『잊기 좋은 이름』 (열림원, 2019)</dd></div><div><dt>키워드</dt><dd>흔적 · 영향</dd></div></dl>
-      <p class="src">출처: 왓챠피디아 책 소개 · Vogue Korea</p>
-    </div>
-    <div class="art" style="display:flex;flex-direction:column;margin-top:0">
-      <div class="who"><span class="heading" style="font-size:40px">니키 리</span><span class="meta">Nikki S. Lee · 1970 · 한국 · 사진 · 퍼포먼스 작가, 영화감독</span></div>
-      <p class="bio" style="margin:18px 0 22px">1970년생 한국 출신의 사진·퍼포먼스 작가이자 영화감독이다. 서로 다른 공동체에 직접 참여하며 자신의 외모와 행동을 변화시키고, 그 모습을 사진으로 기록하는 작업으로 알려져 있다. 대표작 《Projects》와 《Parts》를 통해 개인의 정체성이 고정된 것이 아니라 타인과의 관계 속에서 끊임없이 변화한다는 사실을 탐구한다. 그의 작품은 우리가 누군가와 함께하는 동안 서로의 일부를 받아들이며 이전과는 다른 존재가 되어가는 과정을 보여준다.</p>
-      <dl class="facts2" style="margin-top:auto"><div><dt>대표 작업</dt><dd>《Projects》 1997-2001 · 《Parts》 2002-2005</dd></div><div><dt>키워드</dt><dd>영향 · 경계 · 흔적</dd></div></dl>
-      <p class="src">소개 관점: 본래 주제는 사랑보다 정체성과 사회적 관계다. 이 전시에서는 '타인과의 연결이 나를 어떻게 바꾸는가'로 읽는다.</p>
+
+<div class="frame"><section class="slide sa" aria-label="② 참여 작가 - 카럴 마르턴스">
+  <p class="label">② 서문 · 작가</p>
+  <h2 class="heading">참여 작가 · 카럴 마르턴스</h2>
+  <div class="main">
+    <img class="photo" src="img/martens.jpg" alt="카럴 마르턴스">
+    <div class="info">
+      <p class="name">Karel Martens (카럴 마르턴스)</p>
+      <p class="role">그래픽 디자이너</p>
+      <p class="bio">1939년 네덜란드에서 태어난 그래픽 디자이너이자 예술가다. 타이포그래피, 북디자인, 교육 등 다양한 분야에서 활동해 왔다. 누군가 사용했던 종이 위에 색과 형태를 반복해서 찍어내는 모노프린트 작업으로 잘 알려져 있다. 오래된 기록 위에 새로운 흔적을 쌓으며, 서로 다른 시간과 이미지가 만나 만들어내는 우연한 아름다움을 탐구한다. 그의 작업은 타인의 흔적 위에 자신의 색이 더해지며 새로운 세계가 탄생한다는 전시의 메시지와 맞닿아 있다.</p>
+      <div class="works"><img src="img/martens-w1.jpg" alt="모노프린트 작업 1"><img src="img/martens-w2.jpg" alt="모노프린트 작업 2"><img src="img/martens-w3.jpg" alt="모노프린트 작업 3"></div>
     </div>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>05 / 13</span></div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>04 / 10</span></div>
 </section></div>
-<div class="frame"><section class="slide full " aria-label="③ 포스터에 들어갈 원고">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span class="on">③ 포스터 원고</span><span>④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">③ 포스터에 들어갈 원고</p>
-  <h2 class="heading" style="margin-top:12px">SAI Museum of Art 사이미술관</h2>
-  <div class="g2" style="grid-template-columns:1.25fr 1fr;margin-top:36px">
-    <dl class="dl tight" style="--dt:150px">
-      <div><dt>전시 제목</dt><dd><b>연결에 스며든 사랑</b><span class="sub">Sarang Within Connection</span></dd></div>
-      <div><dt>전시 기간</dt><dd>11/05 ~ 12/05<span class="sub">연도 미정</span></dd></div>
-      <div><dt>관람 시간</dt><dd>10:00 - 18:00<span class="sub">휴관일 미정</span></dd></div>
-      <div><dt>참여 작가</dt><dd>카럴 마르턴스(Karel Martens) · 김애란 · 니키 리(Nikki S. Lee)</dd></div>
-      <div><dt>장소</dt><dd>서울특별시 성동구 왕십리로14길 36 (성수동1가, 프리센스)<span class="sub">36, Wangsimni-ro 14-gil, Seongdong-gu, Seoul, Republic of Korea</span></dd></div>
-      <div><dt>주최 · 주관</dt><dd>SAI Museum of Art 사이미술관</dd></div>
-      <div><dt>협찬</dt><dd>Toss · Phi Institute of Design</dd></div>
-      <div><dt>기타</dt><dd>QR코드 - 웹사이트 / SNS<span class="sub">연결처 미정 - 웹사이트, 무빙 포스터 검토 중</span></dd></div>
-    </dl>
+
+<div class="frame"><section class="slide sa" aria-label="② 참여 작가 - 김애란">
+  <p class="label">② 서문 · 작가</p>
+  <h2 class="heading">참여 작가 · 김애란</h2>
+  <div class="main">
+    <img class="photo" src="img/kim.jpg" alt="김애란">
+    <div class="info">
+      <p class="name">김애란 (Kim Ae-ran)</p>
+      <p class="role">소설가</p>
+      <p class="bio">1980년생 소설가로, 『두근두근 내 인생』, 『비행운』, 『바깥은 여름』 등을 집필했다. 일상에서 마주하는 사람들의 삶과 감정을 섬세한 언어로 풀어내며, 평범한 순간에 깃든 관계의 의미를 발견한다. 첫 산문집 『잊기 좋은 이름』에서는 자신을 지나온 사람과 풍경, 기억을 돌아보며 지금의 자신을 이루는 수많은 이름을 불러낸다. 타인을 기억하고 이해하는 일이 곧 자신을 이해하는 과정이 될 수 있음을 이야기한다.</p>
+      <div class="works"><img class="book" src="img/kim-book.jpg" alt="『잊기 좋은 이름』 표지"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>05 / 10</span></div>
+</section></div>
+
+<div class="frame"><section class="slide sa" aria-label="② 참여 작가 - 니키 리">
+  <p class="label">② 서문 · 작가</p>
+  <h2 class="heading">참여 작가 · 니키 리</h2>
+  <div class="main">
+    <img class="photo" src="img/lee.jpg" alt="니키 리">
+    <div class="info">
+      <p class="name">니키 리 (Nikki S. Lee)</p>
+      <p class="role">사진·퍼포먼스 작가, 영화감독</p>
+      <p class="bio">1970년생 한국 출신의 사진·퍼포먼스 작가이자 영화감독이다. 서로 다른 공동체에 직접 참여하며 자신의 외모와 행동을 변화시키고, 그 모습을 사진으로 기록하는 작업으로 알려져 있다. 대표작 《Projects》와 《Parts》를 통해 개인의 정체성이 고정된 것이 아니라 타인과의 관계 속에서 끊임없이 변화한다는 사실을 탐구한다. 그의 작품은 우리가 누군가와 함께하는 동안 서로의 일부를 받아들이며 이전과는 다른 존재가 되어가는 과정을 보여준다.</p>
+      <div class="works"><img src="img/lee-w1.jpg" alt="《Projects》 작업 1"><img src="img/lee-w2.jpg" alt="《Projects》 작업 2"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>06 / 10</span></div>
+</section></div>
+
+<div class="frame"><section class="slide s3" aria-label="③ 포스터에 들어갈 원고">
+  <p class="label">③ 포스터 원고</p>
+  <div class="main">
     <div>
-      <p class="label">미술관 이름 후보 (가상)</p>
-      <ul class="items" style="margin-top:16px">
-        <li><span class="t">스밈미술관 SEUMIM Museum</span><span class="d">'스며듦'에서 따온 이름</span></li>
-        <li><span class="t">번짐미술관 BEONJIM Art Museum</span><span class="d">키워드 '번짐'과 연결</span></li>
-        <li><span class="t">사이미술관 SAI Museum of Art · 선택</span><span class="r">두 세계 '사이'의 공간</span></li>
-        <li><span class="t">겹미술관 GYEOP Museum</span><span class="d">키워드 '겹침'과 연결</span></li>
-        <li><span class="t">물듦아트센터 MULDEUM Art Center</span><span class="d">서로에게 물든다는 의미</span></li>
-        <li><span class="t">결미술관 GYEOL Museum</span><span class="d">관계의 결, 마음의 결</span></li>
-      </ul>
+      <p class="display">SAI Museum<br>of Art</p>
+      <p class="lead">사이미술관 · 두 세계 사이의 공간</p>
+      <div class="when">
+        <p class="label">전시 기간 · 관람 시간</p>
+        <p class="heading">26.11.05 — 26.12.05</p>
+        <p class="body">월–금 10:00–18:00<br>토–일 · 공휴일 10:00–19:00</p>
+      </div>
+    </div>
+    <dl class="dl">
+      <div><dt>전시 제목</dt><dd>연결에 스며든 사랑<span class="sub">Sarang Within Connection</span></dd></div>
+      <div><dt>주최/주관</dt><dd>사이미술관<span class="sub">SAI Museum of Art</span></dd></div>
+      <div><dt>전시 일정</dt><dd>2026.11.05 ~ 2026.12.05</dd></div>
+      <div><dt>관람 시간</dt><dd>월~금요일 10:00 ~ 18:00 (17:00 입장 마감)<span class="sub">토~일요일/공휴일 10:00 ~ 19:00 (18:00 입장 마감)</span></dd></div>
+      <div><dt>티켓</dt><dd>현장 구매 (성인 1매 10,000원)</dd></div>
+      <div><dt>참여 작가</dt><dd>Karel Martens, 김애란, 니키 리</dd></div>
+      <div><dt>장소</dt><dd>서울특별시 성동구 왕십리로14길 36 (성수동1가, 프리센스)<span class="sub">36, Wangsimni-ro 14-gil, Seongdong-gu, Seoul, Republic of Korea</span></dd></div>
+    </dl>
+  </div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>07 / 10</span></div>
+</section></div>
+
+<div class="frame"><section class="slide s4" aria-label="④ 시각화 핵심 키워드">
+  <p class="label">④ 키워드</p>
+  <h2 class="heading">두 세계가 만나, 겹치고, 남는다</h2>
+  <p class="lead">겹침에서 시작해 영향을 주고받고, 경계를 지닌 채 흔적을 남긴다.</p>
+  <ol class="kw">
+    <li><span class="no">01</span><p class="k">겹침<span>Overlap/Layer</span></p><p class="body">서로 다른 삶이 만나고 여러 관계가 쌓이며 나의 정체성이 형성된다는 의미</p></li>
+    <li><span class="no">02</span><p class="k">영향<span>Influence</span></p><p class="body">서로의 말과 행동, 생각이 스며들며 각자의 모습을 변화시킨다는 의미</p></li>
+    <li><span class="no">03</span><p class="k">경계<span>Boundary</span></p><p class="body">서로에게 스며들면서도 각자의 고유함을 간직한다는 의미</p></li>
+    <li><span class="no">04</span><p class="k">흔적<span>Trace</span></p><p class="body">관계가 지나간 뒤에도 말투와 습관, 취향 속에 서로의 일부가 남는다는 의미</p></li>
+  </ol>
+  <div class="foot"><span>Visual Translation_WK06</span><span>08 / 10</span></div>
+</section></div>
+
+<div class="frame"><section class="slide s5" aria-label="⑤ 주요 의사결정 및 토론 요약">
+  <p class="label">⑤ 의사결정</p>
+  <h2 class="heading">주요 의사결정 및 토론 요약</h2>
+  <div class="main">
+    <div>
+      <div class="sub">
+        <h3 class="title">전시의 방향을 정한 기준</h3>
+        <ol class="num">
+          <li>관객에게 전하고 싶은 메시지가 확실해야 한다.</li>
+          <li>연결, 스밈, 사랑 → 이 세 단어가 보여야한다.</li>
+        </ol>
+      </div>
+      <div class="sub">
+        <h3 class="title">의사소통 방식</h3>
+        <ol class="num">
+          <li>시간이 오래걸리더라도 기획 부분이 중요하기 때문에 회의를 오래해서 모두가 합의하는 만장일치 제도를 도입한다.</li>
+          <li>그림을 그려가면서 자신의 의견을 설명한다.</li>
+        </ol>
+      </div>
+      <figure><img src="img/sketch-persuade.jpg" alt="회의 중 그린 설득 과정 스케치"><figcaption>&lt;그림1&gt; 설득과정 예시 이미지</figcaption></figure>
+    </div>
+    <div class="alt">
+      <p class="tab">세대간의 연결 (x)</p>
+      <div class="pic"><img src="img/alt-1.jpg" alt="세대간의 연결 스케치"></div>
+      <p class="body">부모님에게 물려받은 말투와 습관, 가치관에는 함께 살아온 시간과 가족만의 문화가 담겨 있습니다. 이러한 모습이 세대를 이어 전해지는 과정을 살펴보며, 그 안에 담긴 사랑을 발견하고자 합니다. 이를 통해 나를 이루는 익숙한 것들이 어디에서 왔고, 다음 세대로 어떻게 이어지는지 생각해봅니다.</p>
+      <p class="why">→ 서로 이해가 되기 보다는 설명해서 설득해야하는 과정이 길어지면서 좀 더 모두가 이해할 수 있는 주제를 하기로 결정함</p>
+    </div>
+    <div class="alt on">
+      <p class="tab">연결의 정도</p>
+      <div class="pic"><img src="img/alt-2.jpg" alt="연결의 정도 스케치 - 나와 대상"></div>
+      <p class="body">우리는 연결 속에서 서로에게 영향을 주고받으며 서로의 일부가 됩니다. 관계가 깊어질수록 말투와 습관, 생각이 스며들어 이전과 다른 모습으로 변화하지만, 그 안에서도 각자의 고유함은 남아 있습니다. 이처럼 서로에게 스며드는 정도와 각자로 남는 경계를 살펴보며, 사랑이 우리를 어떻게 변화시키는지 탐구합니다.</p>
+      <p class="why">→ 대화가 가장 깊게 논의되었던 주제였기도 하고 새로운 아이디어가 계속 나와서 재밌게 작업할 수 있을 거라 판단함</p>
+    </div>
+    <div class="alt">
+      <p class="tab">연결의 방식 (x)</p>
+      <div class="pic"><img src="img/alt-3.jpg" alt="연결의 방식 스케치"></div>
+      <p class="body">연결의 사전적 의미 중 '물리적·기술적으로 잇는 행위'에 집중해, 일상에서 당연하게 여겼던 연결을 다시 생각해봅니다. 서로 어울리지 않을 것 같은 대상도 뜻밖의 방식으로 이어보면 새로운 쓰임과 의미가 생길 수 있습니다. 이러한 연결을 재치 있게 풀어내며, 관객이 익숙한 관계와 사물을 유쾌하게 바라보도록 합니다.</p>
+      <p class="why">→ 관객에게 전달하고자 하는 메시지가 명확하지 않았음</p>
     </div>
   </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>06 / 13</span></div>
+  <div class="foot"><span>Visual Translation_WK06</span><span>09 / 10</span></div>
 </section></div>
-<div class="frame"><section class="slide full " aria-label="④ 시각화 핵심 키워드">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span class="on">④ 키워드</span><span>⑤ 의사결정</span></nav></div>
-  <p class="label">④ 시각화 핵심 키워드 - 전시의 기획과 스테이트먼트를 관통하며 이미지와 그래픽 제작의 기준이 될 키워드</p>
-  <h2 class="heading" style="margin-top:12px">영향 · 흔적 · 경계 · 겹침</h2>
-  <div class="kt">
-    <div class="h"><span></span><span class="label">키워드</span><span class="label">전시의 의미</span><span class="label">시각화 방향</span></div>
-    <ol>
-      <li><span class="no">01</span><span class="k"><span class="title">영향</span><span class="label">Influence</span></span><p class="body">서로 다른 두 세계가 만나 각자의 모습에 변화를 일으키는 것. 상대의 말과 행동, 생각이 나에게 스며들어 이전과는 다른 모습을 만들어 내는 과정</p><p class="body">한쪽의 형태가 다른 쪽에 의해 휘거나 변형되는 모습, 색이 주변으로 번져 나가는 블러, 서로의 움직임에 따라 달라지는 형태</p></li>
-      <li><span class="no">02</span><span class="k"><span class="title">흔적</span><span class="label">Trace</span></span><p class="body">관계가 지나간 뒤에도 남는 변화, 즉 말투와 습관과 취향</p><p class="body">얼룩, 지문, 찍힌 자국, 지워졌지만 남아 있는 선처럼 무언가 '있었음'을 보여 주는 이미지</p></li>
-      <li><span class="no">03</span><span class="k"><span class="title">경계</span><span class="label">Boundary</span></span><p class="body">하나가 되지 않고 "각자의 고유함을 간직한다"는 관점</p><p class="body">선명한 윤곽선과 흐려진 부분을 한 화면에 대비해, 섞였지만 사라지지 않은 상태</p></li>
-      <li><span class="no">04</span><span class="k"><span class="title">겹침</span><span class="label">Overlap · Layer</span></span><p class="body">서로 다른 두 세계가 만나는 자리, 전시의 출발점. 여러 사람과의 관계 속에서 자신의 정체성이 형성된다</p><p class="body">반투명한 두 도형이 포개지는 레이어, 색이 겹치는 부분만 진해지는 오버프린트</p></li>
-    </ol>
-  </div>
-  <div class="notes" style="grid-template-columns:repeat(2,1fr)">
-    <div><p class="label">뺀 말</p><p class="body">제목 단어인 '사랑'과 '연결'은 전시 전체를 가리키는 말이고 너무 추상적이라 키워드에서 뺐다.</p></div>
-    <div><p class="label">바꾼 말</p><p class="body">번짐 → 영향 (블러로만 흐르지 않게 더 넓은 말로) · 고유함 → 경계 (보이는 말로) · 축적 → 겹침</p></div>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>07 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 방향을 정한 기준">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약 - 1차 회의 10/12 23:06 (46분) · 2차 회의 10/13 00:20 (71분) · 이후 작가 탐색과 원고 정리</p>
-  <h2 class="heading" style="margin-top:12px">방향을 정한 기준</h2>
-  <p class="lead" style="margin-top:10px">이가은 · 임창균 · 조용주 세 사람이 함께 정했다.</p>
-  <ol class="rows" style="margin-top:40px">
-    <li><span class="no">01</span><div><span class="title">관객이 무엇을 느끼고 가져가는가</span><p class="body">혼자 봐도 남는 것이 있어야 한다.</p></div></li>
-    <li><span class="no">02</span><div><span class="title">한 갈래로 간다</span><p class="body">여러 트랙을 나란히 두면 전시가 갈라진다.</p></div></li>
-    <li><span class="no">03</span><div><span class="title">제목의 '스며든'이 보이는가</span><p class="body">사랑은 보이지만 스며듦이 보이지 않는 안은 발전시키거나 버렸다.</p></div></li>
-    <li><span class="no">04</span><div><span class="title">읽히는 말을 쓴다</span><p class="body">로맨스 소설 같은 표현과 수사적 표현을 피했다. 전문가가 수사적 서문을 나쁜 사례로 든 것을 근거로 삼았다.</p></div></li>
-    <li><span class="no">05</span><div><span class="title">시각으로 옮길 수 있는가</span><p class="body">키워드는 이미지와 그래픽으로 발산할 수 있는지를 따졌다.</p></div></li>
-  </ol>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>08 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 결정의 흐름 1">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약 - 결정의 흐름 1 / 2</p>
-  <h2 class="heading" style="margin-top:12px">'세계의 교집합'에서 '스며든 넓이'로</h2>
-  <div class="tbl">
-    <div class="tr th" style="grid-template-columns:220px 1fr 1fr"><span>단계</span><span>결정</span><span>정한 방식</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">제목</span><span class="c2">생성된 후보 가운데 「연결에 스며든 사랑」</span><span class="c3">다른 후보는 키워드를 나열해 뜻이 잘 읽히지 않았다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">주제 발산 (1차)</span><span class="c2">7개 안 가운데 '세계의 교집합'</span><span class="c3">토론으로 좁혔다. 클리셰 우려는 있지만 가장 낫다고 합의</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">공식 (1차)</span><span class="c2">나와 대상의 연결 = 세계의 공유 = 사랑 / 교집합의 크기 = 스며드는 정도 = 관계의 깊이</span><span class="c3">전원 동의</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">주제의식 (2차)</span><span class="c2">'서로의 일부가 된다'와 '서로에게 번져 간다'를 합치고, '겹친 넓이가 넓을수록 사랑이 깊다'를 더함 → 최종 '스며든 넓이'</span><span class="c3">각자 AI로 뽑은 문장을 비교하고 합쳤다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">질문 (2차)</span><span class="c2">"당신 안에는 누구의 모습이 남아 있나요?"</span><span class="c3">가은 제안, 전원 동의</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">개요 구조 (2차)</span><span class="c2">01 주제와 질문 · 02 작가의 관점 · 03 관계와 맥락을 살리고 04 대상 관객을 추가</span><span class="c3">01 · 02는 어느 전시에서나 보는 형식이라 살렸다. 대상 관객이 빠져 있어 더했다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">개요 작성 (2차)</span><span class="c2">01은 세 사람의 초안 중 하나를 고르고, 02 가은 · 03 용주 · 04 창균이 나눠 쓴 뒤 용주가 통합</span><span class="c3">분업 후 통합</span></div>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>09 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 결정의 흐름 2">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약 - 결정의 흐름 2 / 2</p>
-  <h2 class="heading" style="margin-top:12px">원고에서 작가와 미술관까지</h2>
-  <div class="tbl">
-    <div class="tr th" style="grid-template-columns:220px 1fr 1fr"><span>단계</span><span>결정</span><span>정한 방식</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">작업 순서 (2차)</span><span class="c2">콘셉트와 서문을 먼저, 참여 작가는 그다음</span><span class="c3">콘셉트에 맞는 작가를 찾아야 한다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">서문 (2차)</span><span class="c2">수사를 덜어 평서문으로</span><span class="c3">전문가 피드백</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">시각화 키워드</span><span class="c2">영향 · 흔적 · 경계 · 겹침</span><span class="c3">AI가 낸 후보와 팀이 더한 후보에서 소거법으로 줄였다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">작가 탐색 기준</span><span class="c2">작품 하나가 아니라 연작이나 프로젝트로 주제를 다뤄 온 작가. 키워드를 작가마다 나눠 맡기지 않고 전시 전체로 본다</span><span class="c3">탐색 중 기준을 고쳤다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">참여 작가</span><span class="c2">카럴 마르턴스 · 김애란 · 니키 리</span><span class="c3">마르턴스는 타인의 흔적 위에 색을 겹쳐 새 색을 만든다. 김애란 『잊기 좋은 이름』은 나 → 너 → 우리로 넓어지는 구성과 "잊기 좋은 이름은 없다"는 결론이 흔적과 질문에 맞는다. 니키 리는 다른 공동체에 스며들며 바뀌는 자신을 기록해 '스며드는 과정'을 보여 준다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">미술관 이름</span><span class="c2">사이미술관 (SAI Museum of Art) - 두 세계 '사이'의 공간</span><span class="c3">후보 6개(스밈, 번짐, 사이, 겹, 물듦, 결) 중에서 골랐다</span></div>
-    <div class="tr" style="grid-template-columns:220px 1fr 1fr"><span class="c1">포스터 원고</span><span class="c2">11/05 ~ 12/05 · 성수동 · 10:00 - 18:00 · 협찬 Toss, Phi Institute of Design</span><span class="c3">가상 정보로 정리</span></div>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>10 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 검토했지만 택하지 않은 대안">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약</p>
-  <h2 class="heading" style="margin-top:12px">검토했지만 택하지 않은 대안</h2>
-  <div class="g2" style="margin-top:36px;column-gap:72px">
-    <ul class="items">
-      <li><span class="t">애착 물건</span><span class="d">세대 간 연결(물려 내려오는 것)로 흡수됐다</span></li>
-      <li><span class="t">연결의 방식 3트랙 (세대 간 / 관계와 교감 / 기술적 연결)</span><span class="d">셋을 다 하면 전시가 세 갈래로 갈라지고 벅차다. 하나만 고르기로 했다</span></li>
-      <li><span class="t">연결의 정도 (싱크 맞추기가 아닌 이해하기)</span><span class="d">사랑은 보이지만 '스며듦'이 안 보인다. '세계의 교집합'으로 발전했다</span></li>
-      <li><span class="t">모든 연결을 다시 생각하기 (충전기, 목줄, 생명유지장치)</span><span class="d">너무 1차원적이다. 재치 요소로 남긴다</span></li>
-      <li><span class="t">"사랑하는 존재의 흔적이 스며들어 있다" 같은 문장</span><span class="d">로맨스 소설 같은 표현이라 거부감이 든다</span></li>
-      <li><span class="t">"하나가 된다"</span><span class="d">요즘 사람들은 관계를 하나가 되는 것보다 서로 존중하고 이해해 가는 과정으로 여긴다</span></li>
-    </ul>
-    <ul class="items">
-      <li><span class="t">퍼즐처럼 맞춰 간다</span><span class="d">외곽을 설계해 딱 맞추는 느낌이다. 시간을 함께 보내며 습관이 번져 가는 쪽을 택했다</span></li>
-      <li><span class="t">키워드 '반투명', '축적'</span><span class="d">소거법으로 뺐다. 축적은 '겹침'이 더 맞는 말이라 겹침으로 옮겼다</span></li>
-      <li><span class="t">키워드 '번짐'</span><span class="d">블러로만 흐르기 쉽다. 더 넓은 '영향'을 택하고, 번짐은 영향의 표현 방법(블러)으로 남겼다</span></li>
-      <li><span class="t">키워드 '고유함'</span><span class="d">시각화하기 어렵다. 스펀지 비유(색은 섞여도 스펀지는 각자 남는다)를 '경계'로 옮겼다</span></li>
-      <li><span class="t">키워드 '확장'</span><span class="d">시각화하면 크기가 커지는 것 정도만 떠오른다</span></li>
-      <li><span class="t">김이나 『보통의 언어들』</span><span class="d">'나의 언어로 나를 지키는' 책이라 '타인이 내 안에 스며든다'는 주제와 방향이 반대다</span></li>
-    </ul>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>11 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 의견이 갈린 지점과 결정 방식">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약</p>
-  <h2 class="heading" style="margin-top:12px">의견이 갈린 지점과 결정 방식</h2>
-  <div class="g3" style="margin-top:36px;column-gap:56px">
-    <ul class="items">
-      <li><span class="t">세대 간 연결의 보편성 (1차)</span><span class="d">특수해서 공감대가 좁다(용주) ↔ 엄마 방식대로 부엌을 정리하는 것도 세대 간 연결이다(가은)</span><span class="r">→ 세대 간 연결을 따로 세우지 않고, 사랑의 범위를 가족 · 친구 · 지나간 인연으로 넓혀 안에 담았다</span></li>
-      <li><span class="t">'서로의 일부'와 '번져 감' (2차)</span><span class="d">서로의 일부가 더 특징적이다(용주) ↔ 습관이 번져 가는 것으로 보자(창균)</span><span class="r">→ 가은이 "서로의 일부가 되는 방식이 번져 가는 것"이라고 정리해 둘을 합쳤다</span></li>
-      <li><span class="t">주제의식을 한 문장으로 (2차)</span><span class="d">한 문장이 좋다(용주) ↔ 나눠도 된다(가은, 창균)</span><span class="r">→ 메인 문장 하나와 주제의식 두 개를 함께 두었다</span></li>
-    </ul>
-    <ul class="items">
-      <li><span class="t">작가의 관점 마지막 문장 (2차)</span><span class="d">관계에 초점을 둔 안 ↔ 개인에 초점을 둔 안(가은이 고민)</span><span class="r">→ 관계는 03에서 충분히 다루므로 02는 개인 쪽으로. "고유함을 간직한 채 서로의 세계를 넓혀 가는 과정"</span></li>
-      <li><span class="t">서문은 얼마나 읽혀야 하나 (2차)</span><span class="d">전시 서문은 원래 잘 안 읽힌다(가은) ↔ 의도가 전달되도록 잘 읽혀야 한다(용주)</span><span class="r">→ 전문가 피드백을 근거로 읽히는 평서문을 택했다</span></li>
-      <li><span class="t">참여 작가와 콘셉트 중 무엇이 먼저 (2차)</span><span class="d">작가 목록부터(가은) ↔ 콘셉트를 먼저 정하고 그에 맞는 작가를 찾는다(용주)</span><span class="r">→ 콘셉트와 서문을 먼저 썼다</span></li>
-    </ul>
-    <ul class="items">
-      <li><span class="t">키워드 '번짐'과 '영향' (2차)</span><span class="d">블러로만 흐르기 쉽고 이전 과제와 겹친다, 영향이 상위 개념이라 발산하기 좋다(창균, 가은) ↔ 번짐이 주제와 더 직접 이어진다(용주)</span><span class="r">→ 영향을 키워드로 두고, 번짐은 영향의 표현 방법으로 설명에 넣었다</span></li>
-      <li><span class="t">'고유함'과 '경계' (2차)</span><span class="d">스펀지 두 개가 맞닿으면 색은 섞여도 스펀지는 각자 남는다(가은)</span><span class="r">→ 고유함은 시각화하기 어려워 '경계'로 표현하기로 했다</span></li>
-      <li><span class="t">가장 핵심인 키워드 하나 (2차)</span><span class="d">흔적(창균) ↔ 겹침(용주)</span><span class="r">→ 하나로 줄이지 않고 네 개를 모두 두었다. 겹침을 '전시의 출발점'으로 설명했다</span></li>
-    </ul>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>12 / 13</span></div>
-</section></div>
-<div class="frame"><section class="slide full " aria-label="⑤ 아직 결정하지 못한 쟁점">
-  <div class="bar"><span class="team">VT · TEAM 04</span><nav><span>① 콘셉트 기획</span><span>② 서문 · 작가</span><span>③ 포스터 원고</span><span>④ 키워드</span><span class="on">⑤ 의사결정</span></nav></div>
-  <p class="label">⑤ 주요 의사결정 및 토론 요약</p>
-  <h2 class="heading" style="margin-top:12px">아직 결정하지 못한 쟁점</h2>
-  <div class="g2" style="margin-top:36px;column-gap:72px">
-    <ul class="items">
-      <li><span class="t">서문의 참여 작가 문단</span><span class="d">카럴 마르턴스 · 김애란 · 니키 리가 왜 한 전시에서 만나는지 써야 한다. 김애란에게 약했던 '서로 스며드는 과정'은 니키 리가 채운다</span></li>
-      <li><span class="t">매체 운용</span><span class="d">드로잉 · 사진 · 출판물을 골랐다. 지금 작가는 사진(니키 리), 인쇄(마르턴스), 글(김애란)이다. 드로잉을 어떻게 담을지는 정하지 않았다</span></li>
-    </ul>
-    <ul class="items">
-      <li><span class="t">부정(−) 요소</span><span class="d">개요와 서문에는 넣지 않았다. 그래픽에서 다룰지 정해야 한다</span></li>
-      <li><span class="t">포스터 원고</span><span class="d">휴관일, 연도, QR이 연결할 웹사이트와 무빙 포스터 제작 여부</span></li>
-    </ul>
-  </div>
-  <div class="foot"><span>연결에 스며든 사랑 - 전시 포스터 기획 · 전체판</span><span>13 / 13</span></div>
+
+<div class="frame"><section class="slide" aria-label="스케치">
+  <h2 class="heading" style="margin-top:42px">스케치</h2>
+  <div class="foot"><span>Visual Translation_WK06</span><span>10 / 10</span></div>
 </section></div>
 
 </main>

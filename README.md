@@ -15,7 +15,7 @@ VT/
 ├── TEMPLATE.md    날짜 폴더 README 양식
 ├── WK05/          전시 포스터 웹페이지(임시) → https://yongzu.github.io/VT/WK05/
 │   ├── deck/      발표 슬라이드 압축판 6장 (PNG · PDF)
-│   └── deck-full/ 발표 슬라이드 전체판 13장 (PNG · PDF)
+│   └── deck-full/ 발표 슬라이드 전체판 10장 (PNG · PDF)
 ├── assets/        웹페이지 공용 파일(로고, 커서, 스크롤 스크립트)
 ├── 1007/          날짜별 기록 (MMDD)
 ├── 1008/

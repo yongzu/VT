@@ -6,7 +6,7 @@
 - 웹페이지(임시): [WK05/](WK05/) → https://yongzu.github.io/VT/WK05/
 - 발표 슬라이드 1920×1080 (yongzu.github.io/BI 스타일, 그래픽 없음)
   - 압축판 6장: [WK05/deck/](WK05/deck/) · [PDF](WK05/deck/VT05_TEAM04.pdf) · [PNG](WK05/deck/png/)
-  - 전체판 13장 (이 기획안 전체): [WK05/deck-full/](WK05/deck-full/) · [PDF](WK05/deck-full/VT05_TEAM04_full.pdf) · [PNG](WK05/deck-full/png/)
+  - 전체판 10장 (WK06 발표용, 마지막 장은 팀원 스케치용 빈 장): [WK05/deck-full/](WK05/deck-full/) · [PDF](WK05/deck-full/VT05_TEAM04_full.pdf) · [PNG](WK05/deck-full/png/)
 
 ## 확정 제목
 
