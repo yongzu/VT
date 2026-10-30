@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VT · 잎과 꽃</title>
+<meta name="description" content="연결에 스며든 사랑 - 두 세계가 겹친 자리가 잎이 되고, 관계가 모여 한 송이 꽃이 된다. 직접 만져 보는 그래픽 개념">
+<link rel="icon" type="image/png" href="../../assets/mark.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{color-scheme:light;--ink:#333;--text:#555;--muted:#777;--faint:#999;--rule:#ededed;--line:#dcdcdc;--me:#1D9E75;--you:#D85A30;--leaf:#7F77DD}
+*{box-sizing:border-box}
+html{font-size:12pt;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--text);font-family:"Pretendard Variable",Pretendard,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,p,figure{margin:0;font:inherit}
+a{color:inherit}
+.toolbar{display:flex;align-items:center;gap:20px;padding:18px 24px}
+.toolbar img{display:block;height:27px;width:auto}
+.toolbar .gh{margin-left:auto;color:var(--muted);text-decoration:none}
+main{width:min(960px,calc(100% - 32px));margin:48px auto 140px}
+h1{color:var(--ink);font-size:1.6rem;font-weight:600;letter-spacing:-.01em}
+h1 .slash{padding-right:12px;color:var(--faint)}
+.sub{margin-top:10px;color:var(--faint)}
+.lead{margin:44px 0 0;padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);color:var(--ink);font-size:1.12rem;line-height:1.75}
+section{margin-top:72px}
+h2{color:var(--ink);font-weight:600;font-size:1.15rem}
+h2 .no{color:var(--faint);padding-right:10px;font-weight:400}
+.desc{margin-top:8px;color:var(--muted);max-width:640px}
+.stage{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;margin-top:24px;align-items:start}
+@media (max-width:720px){.stage{grid-template-columns:minmax(0,1fr)}}
+.figure{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:#fff}
+.figure svg,.figure canvas{display:block;width:100%;height:auto}
+.controls{display:flex;flex-direction:column;gap:14px}
+.ctl{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:12px;color:var(--muted);font-size:.92rem}
+input[type=range]{width:100%;accent-color:#555}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
+.checks label{display:flex;align-items:center;gap:6px;cursor:pointer}
+input[type=checkbox]{accent-color:#555}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.seg button{font:inherit;font-size:.9rem;color:var(--muted);background:#fff;border:0;padding:6px 14px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed=true]{background:#333;color:#fff}
+.state{margin-top:6px;padding-top:14px;border-top:1px solid var(--rule)}
+.state b{display:block;color:var(--ink);font-weight:600}
+.state span{display:block;margin-top:4px;color:var(--muted);font-size:.95rem}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:.88rem}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+table{width:100%;border-collapse:collapse;margin-top:20px;font-size:.95rem}
+th,td{text-align:left;padding:12px 10px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--faint);font-weight:400;width:32%}
+td{color:var(--ink)}
+.quote{margin-top:28px;color:var(--ink);font-size:1.12rem}
+footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);color:var(--faint);font-size:.9rem}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="toolbar">
+<a href="../../" aria-label="VT 저장소 처음으로"><img src="../../assets/logo.png" alt="" width="58" height="27"></a>
+<a class="gh" href="https://github.com/yongzu/VT/blob/main/1030/leaf-concept.md">개념 정리 ↗</a>
+</header>
+<main>
+<h1><span class="slash">/</span>잎과 꽃</h1>
+<p class="sub">연결에 스며든 사랑 · Team SAI · 2026.10.30</p>
+
+<p class="lead">원 하나는 나와 이어진 한 사람의 세계다. 두 세계가 겹친 자리에 잎이 생기고, 우리는 그것을 사랑이라 부른다. 관계가 늘어날수록 잎이 늘어나고, 잎들이 모여 한 송이 꽃이 된다. 모든 잎이 모이는 가운데가 가장 밝다. 그곳이 지금의 나다.</p>
+
+<section id="leaf" aria-labelledby="leaf-title">
+<h2 id="leaf-title"><span class="no">01</span>두 세계가 겹치면 잎이 된다</h2>
+<p class="desc">원 두 개를 겹치면 겹친 자리는 반드시 잎 모양이 된다. 잎을 갖다 붙인 게 아니라 겹침이 잎을 만든다. 가까움과 크기를 바꿔 보면 관계마다 잎의 모양이 달라진다.</p>
+<div class="stage">
+<figure class="figure">
+<svg viewBox="0 0 400 300" role="img" aria-labelledby="leaf-svg-title"><title id="leaf-svg-title">나의 원과 상대의 원이 겹친 자리에 생기는 잎</title>
+<defs><clipPath id="clipMe"><circle cx="160" cy="150" r="90"/></clipPath></defs>
+<circle id="you" cx="240" cy="150" r="80" fill="#D85A30" fill-opacity=".12" stroke="#D85A30"/>
+<circle cx="160" cy="150" r="90" fill="#1D9E75" fill-opacity=".12" stroke="#1D9E75"/>
+<circle id="lens" cx="240" cy="150" r="80" clip-path="url(#clipMe)" fill="#7F77DD" fill-opacity=".55"/>
+<line id="chord" stroke="#333" stroke-width=".8" stroke-dasharray="3 3"/>
+<text x="80" y="285" text-anchor="middle" font-size="13" fill="#0F6E56">나</text>
+<text id="youLabel" x="300" y="285" text-anchor="middle" font-size="13" fill="#993C1D">상대</text>
+</svg>
+</figure>
+<div class="controls">
+<div class="ctl"><label for="dist">가까움</label><input type="range" id="dist" min="0" max="100" value="45" step="1"></div>
+<div class="ctl"><label for="size">상대 크기</label><input type="range" id="size" min="35" max="125" value="80" step="1"></div>
+<div class="legend"><span><i style="background:#1D9E75"></i>나의 세계</span><span><i style="background:#D85A30"></i>상대의 세계</span><span><i style="background:#7F77DD"></i>잎 = 사랑</span></div>
+<div class="state" aria-live="polite"><b id="leafState"></b><span id="leafNote"></span></div>
+</div>
+</div>
+</section>
+
+<section id="flower" aria-labelledby="flower-title">
+<h2 id="flower-title"><span class="no">02</span>관계가 모이면 꽃이 된다</h2>
+<p class="desc">관계 하나는 잎 한 장. 사람을 늘리면 잎이 늘어나다가 어느 순간 한 송이 꽃이 된다. 모든 원이 가운데를 품고 있어서, 가운데는 모든 관계가 만나는 자리, 곧 나다.</p>
+<div class="stage">
+<figure class="figure"><canvas id="cv" width="600" height="600" role="img" aria-label="원이 겹쳐 잎과 꽃이 되는 그래픽"></canvas></figure>
+<div class="controls">
+<div class="ctl"><label for="count">사람 수</label><input type="range" id="count" min="1" max="8" value="8" step="1"></div>
+<div class="ctl"><span>바탕</span><div class="seg" role="group" aria-label="바탕"><button type="button" id="bgDark" aria-pressed="true">검정 · 밝아진다</button><button type="button" id="bgLight" aria-pressed="false">흰색 · 짙어진다</button></div></div>
+<div class="checks">
+<label><input type="checkbox" id="vary" checked> 잎 폭 조금씩 다르게</label>
+<label><input type="checkbox" id="outline"> 잎과 나 표시</label>
+<label><input type="checkbox" id="zoom"> 안쪽 확대</label>
+</div>
+<div class="state" aria-live="polite"><b id="flowerState"></b><span id="flowerNote"></span></div>
+</div>
+</div>
+</section>
+
+<section id="meaning" aria-labelledby="meaning-title">
+<h2 id="meaning-title"><span class="no">03</span>꽃은 사랑이 아니라 한 사람이다</h2>
+<table>
+<tr><th>원 하나</th><td>나와 이어진 한 사람의 세계</td></tr>
+<tr><th>겹친 자리 = 잎</th><td>관계 하나, 사랑(영향). 한쪽 가장자리는 나, 다른 쪽은 상대가 그린다</td></tr>
+<tr><th>잎들이 모인 전체 = 꽃</th><td>한 사람이 맺어 온 관계 전체</td></tr>
+<tr><th>가장 밝은 가운데</th><td>나. 모든 관계가 만나는 자리</td></tr>
+<tr><th>원의 바깥 윤곽</th><td>섞여도 사라지지 않는 각자의 세계. 완전히 포개지면 잎은 사라진다</td></tr>
+</table>
+<p class="quote">사랑은 한 송이 꽃이 아니라, 그 안의 수많은 잎이다.</p>
+</section>
+
+<footer>
+<p>Visual Translation · 전시 포스터 「연결에 스며든 사랑」 · TEAM 04 Team SAI(이가은 · 임창균 · 조용주) · <a href="https://github.com/yongzu/VT/tree/main/1030">작업 기록 1030</a></p>
+</footer>
+</main>
+
+<script>
+(() => {
+  const R1 = 90, CX = 160, CY = 150;
+  const dist = document.getElementById('dist'), size = document.getElementById('size');
+  const you = document.getElementById('you'), lens = document.getElementById('lens'), chord = document.getElementById('chord');
+  function updateLeaf() {
+    const r2 = +size.value, maxD = R1 + r2 + 6, minD = Math.max(0, Math.abs(R1 - r2) - 6);
+    const d = maxD - (maxD - minD) * (+dist.value / 100), ox = CX + d;
+    for (const el of [you, lens]) { el.setAttribute('cx', ox); el.setAttribute('r', r2); }
+    document.getElementById('youLabel').setAttribute('x', Math.min(370, ox + 20));
+    let s, n;
+    if (d >= R1 + r2) { s = '아직 만나지 않았다'; n = '겹친 자리가 없으니 잎도 없다.'; chord.setAttribute('opacity', 0); }
+    else if (d <= Math.abs(R1 - r2)) { s = '잎이 사라졌다'; n = '한쪽이 다른 쪽에 삼켜지면 겹침은 원 하나가 된다. 하나가 되는 건 사랑이 아니다.'; chord.setAttribute('opacity', 0); }
+    else {
+      const a = (d * d + R1 * R1 - r2 * r2) / (2 * d), h = Math.sqrt(Math.max(0, R1 * R1 - a * a));
+      chord.setAttribute('x1', CX + a); chord.setAttribute('x2', CX + a);
+      chord.setAttribute('y1', CY - h); chord.setAttribute('y2', CY + h); chord.setAttribute('opacity', 1);
+      const w = (R1 + r2 - d) / (2 * Math.min(R1, r2));
+      s = w < 0.22 ? '스친 인연: 가는 잎' : w < 0.6 ? '자주 만나는 사이: 보통 잎' : '오래 함께한 사이: 둥근 잎';
+      n = Math.abs(R1 - r2) > 25 ? '두 세계의 크기가 달라 잎의 양쪽 곡선이 다르다.' : '잎의 한쪽 가장자리는 나, 다른 쪽은 상대가 그린다. 점선이 가운데 맥.';
+    }
+    document.getElementById('leafState').textContent = s;
+    document.getElementById('leafNote').textContent = n;
+  }
+  dist.addEventListener('input', updateLeaf); size.addEventListener('input', updateLeaf); updateLeaf();
+
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  const count = document.getElementById('count'), vary = document.getElementById('vary');
+  const outline = document.getElementById('outline'), zoom = document.getElementById('zoom');
+  const bgDark = document.getElementById('bgDark'), bgLight = document.getElementById('bgLight');
+  const VARY = [1, 0.88, 1.12, 0.94, 1.08, 0.9, 1.14, 0.86];
+  let dark = true;
+
+  function circlesFor(n, W) {
+    const base = W * 0.2;
+    return Array.from({ length: n }, (_, i) => {
+      const r = base * (vary.checked ? VARY[i] : 1), t = (i / n) * Math.PI * 2, d = n === 1 ? 0 : r * 0.62;
+      return { x: W / 2 + Math.cos(t) * d, y: W / 2 + Math.sin(t) * d, r };
+    });
+  }
+  const path = (c) => { ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2); };
+
+  function drawFlower() {
+    const css = cv.clientWidth || 600, dpr = window.devicePixelRatio || 1, W = Math.round(css * dpr);
+    if (cv.width !== W) { cv.width = W; cv.height = W; }
+    const n = +count.value, cs = circlesFor(n, W);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = dark ? '#000' : '#fff';
+    ctx.fillRect(0, 0, W, W);
+    if (zoom.checked) { ctx.translate(W / 2, W / 2); ctx.scale(2.4, 2.4); ctx.translate(-W / 2, -W / 2); }
+    ctx.globalCompositeOperation = dark ? 'lighter' : 'source-over';
+    const alpha = Math.min(dark ? 0.22 : 0.16, (dark ? 0.85 : 0.7) / n);
+    for (const c of cs) { path(c); ctx.fillStyle = dark ? `rgba(255,255,255,${alpha})` : `rgba(40,40,40,${alpha})`; ctx.fill(); }
+    ctx.globalCompositeOperation = 'source-over';
+    if (outline.checked && n > 1) {
+      const stroke = dark ? 'rgba(255,255,255,.95)' : 'rgba(30,30,30,.9)';
+      const lw = (zoom.checked ? 1 : 2.4) * dpr / (zoom.checked ? 1.4 : 1);
+      const pairs = n === 2 ? [[cs[0], cs[1]]] : cs.map((c, i) => [c, cs[(i + 1) % n]]);
+      for (const [a, b] of pairs) {
+        for (const [p, q] of [[a, b], [b, a]]) {
+          ctx.save(); path(q); ctx.clip(); path(p);
+          ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); ctx.restore();
+        }
+      }
+      ctx.beginPath(); ctx.arc(W / 2, W / 2, 6 * dpr / (zoom.checked ? 2.4 : 1), 0, Math.PI * 2);
+      ctx.fillStyle = dark ? '#fff' : '#222'; ctx.fill();
+      ctx.font = `600 ${Math.round(18 * dpr / (zoom.checked ? 2.4 : 1))}px "Pretendard Variable", Pretendard, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = 4 * dpr / (zoom.checked ? 2.4 : 1);
+      ctx.strokeStyle = dark ? '#000' : '#fff';
+      ctx.strokeText('나', W / 2, W / 2 - 16 * dpr / (zoom.checked ? 2.4 : 1));
+      ctx.fillText('나', W / 2, W / 2 - 16 * dpr / (zoom.checked ? 2.4 : 1));
+    }
+    const word = dark ? '밝다' : '짙다';
+    let s, note;
+    if (n === 1) { s = '원 하나: 아직 잎이 없다'; note = '혼자서는 잎이 생기지 않는다.'; }
+    else if (n === 2) { s = '원 둘: 잎 한 장'; note = '첫 관계. 두 세계가 겹친 자리가 사랑이다.'; }
+    else if (n <= 4) { s = `원 ${n}: 잎이 늘어난다`; note = '관계가 늘어날수록 잎이 늘어난다.'; }
+    else if (n < 8) { s = `원 ${n}: 꽃의 모양이 드러난다`; note = '잎들이 모여 한 사람의 모양이 된다.'; }
+    else { s = '원 8: 한 송이 꽃'; note = `모든 잎이 모이는 가운데가 가장 ${word}. 그곳이 지금의 나다.`; }
+    if (zoom.checked) note = '꽃을 확대하면 한 사람 안에 겹친 잎들의 결이 보인다. 관계의 안쪽.';
+    document.getElementById('flowerState').textContent = s;
+    document.getElementById('flowerNote').textContent = note;
+  }
+  function setBg(isDark) {
+    dark = isDark;
+    bgDark.setAttribute('aria-pressed', String(isDark));
+    bgLight.setAttribute('aria-pressed', String(!isDark));
+    drawFlower();
+  }
+  bgDark.addEventListener('click', () => setBg(true));
+  bgLight.addEventListener('click', () => setBg(false));
+  for (const el of [count, vary, outline, zoom]) el.addEventListener('input', drawFlower);
+  window.addEventListener('resize', drawFlower);
+  document.fonts && document.fonts.ready.then(drawFlower);
+  drawFlower();
+})();
+</script>
+</body>
+</html>
