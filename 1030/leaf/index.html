@@ -4,225 +4,186 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VT · 잎과 꽃</title>
-<meta name="description" content="연결에 스며든 사랑 - 두 세계가 겹친 자리가 잎이 되고, 관계가 모여 한 송이 꽃이 된다. 직접 만져 보는 그래픽 개념">
+<meta name="description" content="연결에 스며든 사랑 - 그래픽 개념 정리. 두 세계가 겹친 자리가 잎이 되고, 관계가 모여 한 송이 꽃이 된다">
 <link rel="icon" type="image/png" href="../../assets/mark.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-:root{color-scheme:light;--ink:#333;--text:#555;--muted:#777;--faint:#999;--rule:#ededed;--line:#dcdcdc;--me:#1D9E75;--you:#D85A30;--leaf:#7F77DD}
+:root{color-scheme:light;--ink:#333;--text:#555;--muted:#777;--faint:#999;--rule:#ededed;--line:#dcdcdc}
 *{box-sizing:border-box}
 html{font-size:12pt;-webkit-text-size-adjust:100%}
-body{margin:0;background:#fff;color:var(--text);font-family:"Pretendard Variable",Pretendard,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,p,figure{margin:0;font:inherit}
-a{color:inherit}
+body{margin:0;background:#fff;color:var(--text);font-family:"Pretendard Variable",Pretendard,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-underline-offset:3px;text-decoration-color:var(--line)}
 .toolbar{display:flex;align-items:center;gap:20px;padding:18px 24px}
 .toolbar img{display:block;height:27px;width:auto}
-.toolbar .gh{margin-left:auto;color:var(--muted);text-decoration:none}
-main{width:min(960px,calc(100% - 32px));margin:48px auto 140px}
-h1{color:var(--ink);font-size:1.6rem;font-weight:600;letter-spacing:-.01em}
-h1 .slash{padding-right:12px;color:var(--faint)}
-.sub{margin-top:10px;color:var(--faint)}
-.lead{margin:44px 0 0;padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);color:var(--ink);font-size:1.12rem;line-height:1.75}
-section{margin-top:72px}
-h2{color:var(--ink);font-weight:600;font-size:1.15rem}
-h2 .no{color:var(--faint);padding-right:10px;font-weight:400}
-.desc{margin-top:8px;color:var(--muted);max-width:640px}
-.stage{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;margin-top:24px;align-items:start}
-@media (max-width:720px){.stage{grid-template-columns:minmax(0,1fr)}}
-.figure{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:#fff}
-.figure svg,.figure canvas{display:block;width:100%;height:auto}
-.controls{display:flex;flex-direction:column;gap:14px}
-.ctl{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:12px;color:var(--muted);font-size:.92rem}
-input[type=range]{width:100%;accent-color:#555}
-.checks{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.92rem}
-.checks label{display:flex;align-items:center;gap:6px;cursor:pointer}
-input[type=checkbox]{accent-color:#555}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.seg button{font:inherit;font-size:.9rem;color:var(--muted);background:#fff;border:0;padding:6px 14px;cursor:pointer}
-.seg button+button{border-left:1px solid var(--line)}
-.seg button[aria-pressed=true]{background:#333;color:#fff}
-.state{margin-top:6px;padding-top:14px;border-top:1px solid var(--rule)}
-.state b{display:block;color:var(--ink);font-weight:600}
-.state span{display:block;margin-top:4px;color:var(--muted);font-size:.95rem}
-.legend{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:.88rem}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:.95rem}
-th,td{text-align:left;padding:12px 10px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top}
-th{color:var(--faint);font-weight:400;width:32%}
-td{color:var(--ink)}
-.quote{margin-top:28px;color:var(--ink);font-size:1.12rem}
+.toolbar .src{margin-left:auto;color:var(--muted);text-decoration:none;font-size:.92rem}
+main{width:min(820px,calc(100% - 32px));margin:40px auto 140px}
+.doc h1{margin:0 0 28px;color:var(--ink);font-size:1.7rem;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+.doc h2{margin:64px 0 14px;padding-top:22px;border-top:1px solid var(--rule);color:var(--ink);font-size:1.2rem;font-weight:600}
+.doc h3{margin:36px 0 10px;color:var(--ink);font-size:1.05rem;font-weight:600}
+.doc p,.doc ul,.doc ol{margin:0 0 14px}
+.doc ul,.doc ol{padding-left:1.3em}
+.doc li{margin:4px 0}
+.doc li>ul,.doc li>ol{margin:4px 0 0}
+.doc strong{color:var(--ink);font-weight:600}
+.doc blockquote{margin:0 0 18px;padding:14px 0 14px 18px;border-left:2px solid var(--ink);color:var(--ink);font-size:1.06rem}
+.doc blockquote p{margin:0}
+.doc blockquote p+p{margin-top:6px}
+.doc code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:#f5f5f5;padding:1px 5px;border-radius:3px}
+.table-wrap{overflow-x:auto;margin:6px 0 18px}
+.doc table{width:100%;border-collapse:collapse;font-size:.95rem}
+.doc th,.doc td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.doc th{color:var(--faint);font-weight:400;border-bottom-color:var(--line)}
+.doc td{color:var(--ink)}
+.doc input[type=checkbox]{margin:0 6px 0 0;accent-color:#555;vertical-align:-1px}
+.doc li:has(>input[type=checkbox]){list-style:none;margin-left:-1.3em}
+.status{color:var(--faint)}
+.viz{margin:26px 0 8px;padding:20px;border:1px solid var(--rule);border-radius:6px}
+.viz-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.viz svg{display:block;width:100%;height:auto}
+.viz .lbl{font-size:.88rem;color:var(--muted)}
+.viz .row{display:flex;align-items:center;gap:10px;margin:8px 0}
+.viz .row input[type=range]{flex:1;accent-color:#555}
+.viz .checks label{display:inline-flex;align-items:center;gap:6px;margin-right:14px;cursor:pointer}
+.viz input[type=checkbox]{accent-color:#555}
+.viz .state{margin:10px 0 0;color:var(--ink);font-weight:600}
+.viz .note{margin:2px 0 0}
+.viz-cap{margin:8px 0 0;font-size:.88rem;color:var(--faint)}
 footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);color:var(--faint);font-size:.9rem}
 footer a{color:var(--muted)}
 </style>
 </head>
 <body>
 <header class="toolbar">
-<a href="../../" aria-label="VT 저장소 처음으로"><img src="../../assets/logo.png" alt="" width="58" height="27"></a>
-<a class="gh" href="https://github.com/yongzu/VT/blob/main/1030/leaf-concept.md">개념 정리 ↗</a>
+<a href="../../" aria-label="VT 처음으로"><img src="../../assets/logo.png" alt="" width="58" height="27"></a>
+<a class="src" href="https://github.com/yongzu/VT/blob/main/1030/leaf-concept.md">원문 leaf-concept.md ↗</a>
 </header>
 <main>
-<h1><span class="slash">/</span>잎과 꽃</h1>
-<p class="sub">연결에 스며든 사랑 · Team SAI · 2026.10.30</p>
+<article class="doc" id="doc"><p class="status">불러오는 중…</p></article>
 
-<p class="lead">원 하나는 나와 이어진 한 사람의 세계다. 두 세계가 겹친 자리에 잎이 생기고, 우리는 그것을 사랑이라 부른다. 관계가 늘어날수록 잎이 늘어나고, 잎들이 모여 한 송이 꽃이 된다. 모든 잎이 모이는 가운데가 가장 밝다. 그곳이 지금의 나다.</p>
-
-<section id="leaf" aria-labelledby="leaf-title">
-<h2 id="leaf-title"><span class="no">01</span>두 세계가 겹치면 잎이 된다</h2>
-<p class="desc">원 두 개를 겹치면 겹친 자리는 반드시 잎 모양이 된다. 잎을 갖다 붙인 게 아니라 겹침이 잎을 만든다. 가까움과 크기를 바꿔 보면 관계마다 잎의 모양이 달라진다.</p>
-<div class="stage">
-<figure class="figure">
-<svg viewBox="0 0 400 300" role="img" aria-labelledby="leaf-svg-title"><title id="leaf-svg-title">나의 원과 상대의 원이 겹친 자리에 생기는 잎</title>
-<defs><clipPath id="clipMe"><circle cx="160" cy="150" r="90"/></clipPath></defs>
-<circle id="you" cx="240" cy="150" r="80" fill="#D85A30" fill-opacity=".12" stroke="#D85A30"/>
-<circle cx="160" cy="150" r="90" fill="#1D9E75" fill-opacity=".12" stroke="#1D9E75"/>
-<circle id="lens" cx="240" cy="150" r="80" clip-path="url(#clipMe)" fill="#7F77DD" fill-opacity=".55"/>
-<line id="chord" stroke="#333" stroke-width=".8" stroke-dasharray="3 3"/>
-<text x="80" y="285" text-anchor="middle" font-size="13" fill="#0F6E56">나</text>
-<text id="youLabel" x="300" y="285" text-anchor="middle" font-size="13" fill="#993C1D">상대</text>
+<template id="viz-tpl">
+<figure class="viz" aria-label="두 원이 겹친 자리가 잎이 되고, 여러 관계의 잎이 나의 윤곽을 그리는 인터랙션">
+<div class="viz-cols">
+<div>
+<svg viewBox="0 0 330 260" role="img" aria-label="나의 원과 상대의 원이 겹친 자리에 생기는 잎">
+<defs><clipPath id="clipMe"><circle cx="130" cy="125" r="80"/></clipPath></defs>
+<circle id="o2" cx="210" cy="125" r="70" fill="#D85A30" fill-opacity="0.12" stroke="#D85A30" stroke-width="1"/>
+<circle cx="130" cy="125" r="80" fill="#1D9E75" fill-opacity="0.12" stroke="#1D9E75" stroke-width="1"/>
+<circle id="lens" cx="210" cy="125" r="70" clip-path="url(#clipMe)" fill="#7F77DD" fill-opacity="0.55"/>
+<line id="chord" x1="0" y1="0" x2="0" y2="0" stroke="#333" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="70" y="240" text-anchor="middle" font-size="12" fill="#0F6E56">나</text>
+<text id="otl" x="250" y="240" text-anchor="middle" font-size="12" fill="#993C1D">상대</text>
 </svg>
+<div class="row"><span class="lbl" style="min-width:56px">가까움</span><input type="range" id="dist" min="0" max="100" value="45" step="1" aria-label="가까움"></div>
+<div class="row"><span class="lbl" style="min-width:56px">상대 크기</span><input type="range" id="size" min="30" max="110" value="70" step="1" aria-label="상대 크기"></div>
+<p class="state" id="state" aria-live="polite"></p>
+<p class="note lbl" id="state2"></p>
+</div>
+<div>
+<svg viewBox="0 0 330 260" role="img" aria-label="나의 원 가장자리를 따라 놓인 관계의 잎들">
+<defs><clipPath id="clipMe2"><circle cx="165" cy="125" r="82"/></clipPath></defs>
+<g id="others"></g>
+<g id="leaves" clip-path="url(#clipMe2)"></g>
+<circle id="me2" cx="165" cy="125" r="82" fill="none" stroke="#777" stroke-width="1"/>
+</svg>
+<div class="row checks lbl"><label><input type="checkbox" id="showMe" checked> 나의 원</label><label><input type="checkbox" id="showOthers"> 상대의 원</label></div>
+<div class="row checks lbl"><label><input type="checkbox" id="past"> 몇몇 관계가 지나감</label></div>
+<p class="note lbl">나의 원을 끄면, 관계의 잎들만으로 나의 윤곽이 드러난다</p>
+</div>
+</div>
 </figure>
-<div class="controls">
-<div class="ctl"><label for="dist">가까움</label><input type="range" id="dist" min="0" max="100" value="45" step="1"></div>
-<div class="ctl"><label for="size">상대 크기</label><input type="range" id="size" min="35" max="125" value="80" step="1"></div>
-<div class="legend"><span><i style="background:#1D9E75"></i>나의 세계</span><span><i style="background:#D85A30"></i>상대의 세계</span><span><i style="background:#7F77DD"></i>잎 = 사랑</span></div>
-<div class="state" aria-live="polite"><b id="leafState"></b><span id="leafNote"></span></div>
-</div>
-</div>
-</section>
-
-<section id="flower" aria-labelledby="flower-title">
-<h2 id="flower-title"><span class="no">02</span>관계가 모이면 꽃이 된다</h2>
-<p class="desc">관계 하나는 잎 한 장. 사람을 늘리면 잎이 늘어나다가 어느 순간 한 송이 꽃이 된다. 모든 원이 가운데를 품고 있어서, 가운데는 모든 관계가 만나는 자리, 곧 나다.</p>
-<div class="stage">
-<figure class="figure"><canvas id="cv" width="600" height="600" role="img" aria-label="원이 겹쳐 잎과 꽃이 되는 그래픽"></canvas></figure>
-<div class="controls">
-<div class="ctl"><label for="count">사람 수</label><input type="range" id="count" min="1" max="8" value="8" step="1"></div>
-<div class="ctl"><span>바탕</span><div class="seg" role="group" aria-label="바탕"><button type="button" id="bgDark" aria-pressed="true">검정 · 밝아진다</button><button type="button" id="bgLight" aria-pressed="false">흰색 · 짙어진다</button></div></div>
-<div class="checks">
-<label><input type="checkbox" id="vary" checked> 잎 폭 조금씩 다르게</label>
-<label><input type="checkbox" id="outline"> 잎과 나 표시</label>
-<label><input type="checkbox" id="zoom"> 안쪽 확대</label>
-</div>
-<div class="state" aria-live="polite"><b id="flowerState"></b><span id="flowerNote"></span></div>
-</div>
-</div>
-</section>
-
-<section id="meaning" aria-labelledby="meaning-title">
-<h2 id="meaning-title"><span class="no">03</span>꽃은 사랑이 아니라 한 사람이다</h2>
-<table>
-<tr><th>원 하나</th><td>나와 이어진 한 사람의 세계</td></tr>
-<tr><th>겹친 자리 = 잎</th><td>관계 하나, 사랑(영향). 한쪽 가장자리는 나, 다른 쪽은 상대가 그린다</td></tr>
-<tr><th>잎들이 모인 전체 = 꽃</th><td>한 사람이 맺어 온 관계 전체</td></tr>
-<tr><th>가장 밝은 가운데</th><td>나. 모든 관계가 만나는 자리</td></tr>
-<tr><th>원의 바깥 윤곽</th><td>섞여도 사라지지 않는 각자의 세계. 완전히 포개지면 잎은 사라진다</td></tr>
-</table>
-<p class="quote">사랑은 한 송이 꽃이 아니라, 그 안의 수많은 잎이다.</p>
-</section>
+<p class="viz-cap">직접 만져 보기: 왼쪽은 두 원의 가까움과 크기에 따라 달라지는 잎, 오른쪽은 여러 관계의 잎이 나의 원 가장자리에 놓이는 모습</p>
+</template>
 
 <footer>
 <p>Visual Translation · 전시 포스터 「연결에 스며든 사랑」 · TEAM 04 Team SAI(이가은 · 임창균 · 조용주) · <a href="https://github.com/yongzu/VT/tree/main/1030">작업 기록 1030</a></p>
 </footer>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script>
-(() => {
-  const R1 = 90, CX = 160, CY = 150;
+(async () => {
+  const MD = '../leaf-concept.md';
+  const REPO = 'https://github.com/yongzu/VT/blob/main/1030/';
+  const doc = document.getElementById('doc');
+  let text;
+  try {
+    const res = await fetch(MD, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(res.status);
+    text = await res.text();
+  } catch (e) {
+    doc.innerHTML = `<p class="status">문서를 불러오지 못했다. <a href="${REPO}leaf-concept.md">GitHub에서 보기</a></p>`;
+    return;
+  }
+  doc.innerHTML = marked.parse(text, { gfm: true });
+
+  // 문서 기준(1030/)의 상대 경로를 이 페이지(1030/leaf/) 기준으로 바꾼다. 마크다운 파일은 GitHub에서 연다
+  doc.querySelectorAll('a[href], img[src]').forEach((el) => {
+    const attr = el.tagName === 'A' ? 'href' : 'src';
+    const v = el.getAttribute(attr);
+    if (!v || /^(https?:|mailto:|#)/.test(v)) return;
+    if (v.startsWith('leaf/')) { el.setAttribute(attr, './' + v.slice(5).replace(/^index\.html$/, '')); return; }
+    el.setAttribute(attr, /\.md(#|$)/.test(v) ? REPO + v : '../' + v);
+  });
+  doc.querySelectorAll('table').forEach((t) => {
+    const w = document.createElement('div');
+    w.className = 'table-wrap';
+    t.replaceWith(w);
+    w.appendChild(t);
+  });
+  doc.querySelectorAll('h2, h3').forEach((h) => {
+    h.id = h.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').replace(/\s+/g, '-');
+  });
+
+  // 시각 자료는 '1. 왜 잎인가' 절 끝(2절 제목 앞)에 넣는다
+  const viz = document.getElementById('viz-tpl').content.cloneNode(true);
+  const h2s = [...doc.querySelectorAll('h2')];
+  const next = h2s.find((h) => /^2\./.test(h.textContent.trim()));
+  if (next) next.before(viz); else doc.appendChild(viz);
+  if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+  initViz();
+})();
+
+function initViz() {
+  const R1 = 80, CX = 130, CY = 125;
   const dist = document.getElementById('dist'), size = document.getElementById('size');
-  const you = document.getElementById('you'), lens = document.getElementById('lens'), chord = document.getElementById('chord');
-  function updateLeaf() {
+  function upd1() {
     const r2 = +size.value, maxD = R1 + r2 + 6, minD = Math.max(0, Math.abs(R1 - r2) - 6);
     const d = maxD - (maxD - minD) * (+dist.value / 100), ox = CX + d;
-    for (const el of [you, lens]) { el.setAttribute('cx', ox); el.setAttribute('r', r2); }
-    document.getElementById('youLabel').setAttribute('x', Math.min(370, ox + 20));
-    let s, n;
-    if (d >= R1 + r2) { s = '아직 만나지 않았다'; n = '겹친 자리가 없으니 잎도 없다.'; chord.setAttribute('opacity', 0); }
-    else if (d <= Math.abs(R1 - r2)) { s = '잎이 사라졌다'; n = '한쪽이 다른 쪽에 삼켜지면 겹침은 원 하나가 된다. 하나가 되는 건 사랑이 아니다.'; chord.setAttribute('opacity', 0); }
+    ['o2', 'lens'].forEach((id) => { const e = document.getElementById(id); e.setAttribute('cx', ox); e.setAttribute('r', r2); });
+    document.getElementById('otl').setAttribute('x', Math.min(300, ox + 20));
+    const ch = document.getElementById('chord');
+    let s = '', s2 = '';
+    if (d >= R1 + r2) { s = '아직 만나지 않았다'; s2 = '겹친 자리가 없으니 잎도 없다'; ch.setAttribute('opacity', 0); }
+    else if (d <= Math.abs(R1 - r2)) { s = '잎이 사라졌다'; s2 = '한쪽이 다른 쪽에 삼켜지면 겹침은 원 하나가 된다. 하나가 되는 건 사랑이 아니다'; ch.setAttribute('opacity', 0); }
     else {
       const a = (d * d + R1 * R1 - r2 * r2) / (2 * d), h = Math.sqrt(Math.max(0, R1 * R1 - a * a));
-      chord.setAttribute('x1', CX + a); chord.setAttribute('x2', CX + a);
-      chord.setAttribute('y1', CY - h); chord.setAttribute('y2', CY + h); chord.setAttribute('opacity', 1);
+      ch.setAttribute('x1', CX + a); ch.setAttribute('x2', CX + a); ch.setAttribute('y1', CY - h); ch.setAttribute('y2', CY + h); ch.setAttribute('opacity', 1);
       const w = (R1 + r2 - d) / (2 * Math.min(R1, r2));
       s = w < 0.22 ? '스친 인연: 가는 잎' : w < 0.6 ? '자주 만나는 사이: 보통 잎' : '오래 함께한 사이: 둥근 잎';
-      n = Math.abs(R1 - r2) > 25 ? '두 세계의 크기가 달라 잎의 양쪽 곡선이 다르다.' : '잎의 한쪽 가장자리는 나, 다른 쪽은 상대가 그린다. 점선이 가운데 맥.';
+      s2 = Math.abs(R1 - r2) > 25 ? '두 세계의 크기가 달라 잎의 양쪽 곡선이 다르다' : '잎의 한쪽 가장자리는 나, 다른 쪽은 상대가 그린다. 점선이 가운데 맥';
     }
-    document.getElementById('leafState').textContent = s;
-    document.getElementById('leafNote').textContent = n;
+    document.getElementById('state').textContent = s;
+    document.getElementById('state2').textContent = s2;
   }
-  dist.addEventListener('input', updateLeaf); size.addEventListener('input', updateLeaf); updateLeaf();
+  dist.oninput = upd1; size.oninput = upd1; upd1();
 
-  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
-  const count = document.getElementById('count'), vary = document.getElementById('vary');
-  const outline = document.getElementById('outline'), zoom = document.getElementById('zoom');
-  const bgDark = document.getElementById('bgDark'), bgLight = document.getElementById('bgLight');
-  const VARY = [1, 0.88, 1.12, 0.94, 1.08, 0.9, 1.14, 0.86];
-  let dark = true;
-
-  function circlesFor(n, W) {
-    const base = W * 0.2;
-    return Array.from({ length: n }, (_, i) => {
-      const r = base * (vary.checked ? VARY[i] : 1), t = (i / n) * Math.PI * 2, d = n === 1 ? 0 : r * 0.62;
-      return { x: W / 2 + Math.cos(t) * d, y: W / 2 + Math.sin(t) * d, r };
+  const people = [[20, 112, 48, '#D85A30', 0], [85, 118, 40, '#EF9F27', 1], [140, 104, 55, '#378ADD', 0], [200, 120, 34, '#639922', 1], [255, 108, 46, '#D4537E', 0], [315, 116, 38, '#BA7517', 0]];
+  function upd2() {
+    const past = document.getElementById('past').checked, so = document.getElementById('showOthers').checked;
+    let L = '', O = '';
+    people.forEach((p) => {
+      const t = (p[0] * Math.PI) / 180, x = 165 + p[1] * Math.cos(t), y = 125 + p[1] * Math.sin(t);
+      const gone = past && p[4];
+      L += gone ? `<circle cx="${x}" cy="${y}" r="${p[2]}" fill="none" stroke="${p[3]}" stroke-width="1" stroke-dasharray="2 3"/>` : `<circle cx="${x}" cy="${y}" r="${p[2]}" fill="${p[3]}" fill-opacity="0.5"/>`;
+      if (so && !gone) O += `<circle cx="${x}" cy="${y}" r="${p[2]}" fill="none" stroke="${p[3]}" stroke-width="0.6" stroke-opacity="0.6"/>`;
     });
+    document.getElementById('leaves').innerHTML = L;
+    document.getElementById('others').innerHTML = O;
+    document.getElementById('me2').setAttribute('opacity', document.getElementById('showMe').checked ? 1 : 0);
   }
-  const path = (c) => { ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2); };
-
-  function drawFlower() {
-    const css = cv.clientWidth || 600, dpr = window.devicePixelRatio || 1, W = Math.round(css * dpr);
-    if (cv.width !== W) { cv.width = W; cv.height = W; }
-    const n = +count.value, cs = circlesFor(n, W);
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = dark ? '#000' : '#fff';
-    ctx.fillRect(0, 0, W, W);
-    if (zoom.checked) { ctx.translate(W / 2, W / 2); ctx.scale(2.4, 2.4); ctx.translate(-W / 2, -W / 2); }
-    ctx.globalCompositeOperation = dark ? 'lighter' : 'source-over';
-    const alpha = Math.min(dark ? 0.22 : 0.16, (dark ? 0.85 : 0.7) / n);
-    for (const c of cs) { path(c); ctx.fillStyle = dark ? `rgba(255,255,255,${alpha})` : `rgba(40,40,40,${alpha})`; ctx.fill(); }
-    ctx.globalCompositeOperation = 'source-over';
-    if (outline.checked && n > 1) {
-      const stroke = dark ? 'rgba(255,255,255,.95)' : 'rgba(30,30,30,.9)';
-      const lw = (zoom.checked ? 1 : 2.4) * dpr / (zoom.checked ? 1.4 : 1);
-      const pairs = n === 2 ? [[cs[0], cs[1]]] : cs.map((c, i) => [c, cs[(i + 1) % n]]);
-      for (const [a, b] of pairs) {
-        for (const [p, q] of [[a, b], [b, a]]) {
-          ctx.save(); path(q); ctx.clip(); path(p);
-          ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke(); ctx.restore();
-        }
-      }
-      ctx.beginPath(); ctx.arc(W / 2, W / 2, 6 * dpr / (zoom.checked ? 2.4 : 1), 0, Math.PI * 2);
-      ctx.fillStyle = dark ? '#fff' : '#222'; ctx.fill();
-      ctx.font = `600 ${Math.round(18 * dpr / (zoom.checked ? 2.4 : 1))}px "Pretendard Variable", Pretendard, sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.lineJoin = 'round';
-      ctx.lineWidth = 4 * dpr / (zoom.checked ? 2.4 : 1);
-      ctx.strokeStyle = dark ? '#000' : '#fff';
-      ctx.strokeText('나', W / 2, W / 2 - 16 * dpr / (zoom.checked ? 2.4 : 1));
-      ctx.fillText('나', W / 2, W / 2 - 16 * dpr / (zoom.checked ? 2.4 : 1));
-    }
-    const word = dark ? '밝다' : '짙다';
-    let s, note;
-    if (n === 1) { s = '원 하나: 아직 잎이 없다'; note = '혼자서는 잎이 생기지 않는다.'; }
-    else if (n === 2) { s = '원 둘: 잎 한 장'; note = '첫 관계. 두 세계가 겹친 자리가 사랑이다.'; }
-    else if (n <= 4) { s = `원 ${n}: 잎이 늘어난다`; note = '관계가 늘어날수록 잎이 늘어난다.'; }
-    else if (n < 8) { s = `원 ${n}: 꽃의 모양이 드러난다`; note = '잎들이 모여 한 사람의 모양이 된다.'; }
-    else { s = '원 8: 한 송이 꽃'; note = `모든 잎이 모이는 가운데가 가장 ${word}. 그곳이 지금의 나다.`; }
-    if (zoom.checked) note = '꽃을 확대하면 한 사람 안에 겹친 잎들의 결이 보인다. 관계의 안쪽.';
-    document.getElementById('flowerState').textContent = s;
-    document.getElementById('flowerNote').textContent = note;
-  }
-  function setBg(isDark) {
-    dark = isDark;
-    bgDark.setAttribute('aria-pressed', String(isDark));
-    bgLight.setAttribute('aria-pressed', String(!isDark));
-    drawFlower();
-  }
-  bgDark.addEventListener('click', () => setBg(true));
-  bgLight.addEventListener('click', () => setBg(false));
-  for (const el of [count, vary, outline, zoom]) el.addEventListener('input', drawFlower);
-  window.addEventListener('resize', drawFlower);
-  document.fonts && document.fonts.ready.then(drawFlower);
-  drawFlower();
-})();
+  ['showMe', 'showOthers', 'past'].forEach((id) => { document.getElementById(id).onchange = upd2; });
+  upd2();
+}
 </script>
 </body>
 </html>
