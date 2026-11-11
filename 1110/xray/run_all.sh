@@ -12,4 +12,5 @@ python dish.py x_0222.png d_0222.png
 python dish.py x_0178.png d_0178.png nob           # nob: no bubbles
 python color.py
 python tail.py
+python merge.py a
 python export_webp.py
