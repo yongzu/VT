@@ -58,7 +58,7 @@ Phi Institute of Design의 **Visual Translation** 수업 과제를 기록하는 
 - 주제 · 핵심 전달 내용 · 매거진 이름은 2회차 과제까지 확정하고 이후 바꿀 수 없다. 분량 · 구성 · 순서는 바꿀 수 있다
 - 과제 안내는 사용자가 먼저 자기 생각으로 쓰라고 한다. 주제와 경험, 이유는 사용자의 말을 받아 정리하고 대신 지어내지 않는다
 - 기획: [magazine/README.md](magazine/README.md) · 진행 기록: `magazine/1117/`부터
-- **이어하기**: 최신은 [magazine/1119/README.md](magazine/1119/README.md) (레이아웃 공부, 페이지네이션 스케치 → Figma 06–09 · A4 1pager · 경험일지. 다음: 제호 고르기, Argent Pixel · Redaction 70 설치, 경험일지 채우기)
+- **이어하기**: 최신은 [magazine/1119/README.md](magazine/1119/README.md) (레이아웃 공부, 페이지네이션 스케치 → Figma 06–09 · A4 1pager · 경험일지. 폰트 탐색 T1–T9, 기획 수정 아이디어 IDEA_01~04 초안. 다음: 수정안 확정, 제호 고르기, 경험일지 채우기)
 
 ## 지난 프로젝트: 전시 포스터 「연결에 스며든 사랑」
 

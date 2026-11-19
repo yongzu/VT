@@ -64,6 +64,51 @@
 - Pretendard도 Figma MCP에서 안 보여서 본문은 Noto Sans KR로 대신 들어가 있다
 - 영문 픽셀 폰트는 한글이 없다
 
+## 저녁: 키워드별 폰트 탐색 (타이포그래피 과제로도 쓸 것)
+
+가려짐 · 숨김 · 은신은 같은 층위로 묶었다. 키워드 6개 × Adobe Fonts 4개.
+
+| 키워드 | 폰트 (Adobe Fonts) |
+| --- | --- |
+| 끊김 | Zuume Cut, Axia (Stencil), Changeling Neo, Eco |
+| 그림자 | Force (Shadow), Rig Shaded, Discovery (3D 레이어), Forgotten Futurist |
+| 잔상 | Vektra, Solvent, Tephra, Slight Chance |
+| 가려짐 | Redaction, LTR NCND, Panoptica, Archive Matrix |
+| 소재 | Cotton, Duality (Sand / Steel), Gridlite PE, Gloridot |
+| 봉제선 | Sewn, Punto, Puntino, Chronic (Dotted) |
+
+- 24개 모두 라틴 전용. 한글은 찾지 않기로 함
+- Figma `TYPE_01 폰트 탐색 의도`(주제 / 배경, 수집 계획, 선별 기준, 분류와 분석 방법), `TYPE_02 숨는 방식`, `TYPE_03 가려짐 · 질감 · 움직임` (1920×1080, [Figma](https://www.figma.com/design/dhXKmqQ2FMSZ3c0VEWETej/Phi-Design-Institute?node-id=3199-7021))
+- 분류를 3묶음 7개로: 숨는 방식(끊김, 그림자, 잔상, 가려짐) / 옷을 가까이 본 질감(소재, 봉제선) / 닌자의 움직임(동작). 직접 찾은 폰트 11개(Gala, Gill Sans Nova, CC Pixel Arcade, Superscore, Rubik Puddles, Scribo, Tephra, BC Rebecca, Narly, Seabass, National Park)도 넣었다. Seabass는 변형이 없는 기준 글자로 둠
+- 견본은 모두 같은 문장 "YNA Yongzu Ninja Archived"로 통일(Adobe Fonts 미리보기 캡처, 3열 띠). 그림자의 Discovery는 3D 레이어가 따로 없어서 Microgramma (Only Shadow)로 바꿈
+- 같은 문장으로 써 보니 Vektra, Solvent의 잔상은 견본 이미지의 연출이었다. 한 줄로는 잔상이 안 보인다
+
+## 밤: 분석 계획 프레임 (타이포그래피 수업 틀 적용)
+
+수업 자료(한글 구조, 형태 요소, 구조, 공간)와 메모(em, UPM, 사이드베어링, 회색도 / 부리 / 맵 / 겹쳐보기)를 바탕으로 분석 틀을 만들었다. 같은 단어는 YNA.
+
+| 프레임 | 내용 |
+| --- | --- |
+| T4 | 배경 - 이유, 목적, 목표 |
+| T5 | 실행 방법론 - 수집 계획, 선별 기준, 분류 / 분석 방법, 기간, 비용, 도구 |
+| T6 | 분석 기준표 - 형태 · 구조 · 공간 용어와 라틴에서 볼 곳 |
+| T7 | 분석 예시 - Axia Stencil Black (겹쳐보기, 체크, 회색도) |
+| T8-1~3 | 굵기 - 폰트마다 한 줄, 울트라라이트~블랙 칸에 YNA. 없는 굵기는 비움 |
+| T9 | 맵 - 숨김 정도 × 판독성 (초안 배치) |
+
+- 굵기 칸은 스타일 이름으로 정했다. 이름에 굵기가 없는 스타일(Shadow, Sand, Dotted 등)은 레귤러, Force Shadow는 울트라 블랙 패밀리라 블랙. 가변 폰트(LTR NCND, Superscore, Gridlite, Seabass)는 기본값만 레귤러에
+- 맵 위치는 판독 테스트 전 초안
+- 비교 이미지는 Adobe Fonts 카드라 저장소에 올리지 않는다
+
+## 수업 후: 기획 수정 아이디어 (초안, 확정 아님)
+
+정민님 SUPERMARKET 쇼케이스(녹취)와 오늘 메모를 합쳐 Figma `IDEA_01~04`로 정리했다. 기존 프레임은 그대로 둠.
+- 메모: 다 2p씩 병렬이라 메인 주제가 약하다. 브랜드 소개는 나만의 이야기가 아니다. AI 브랜딩의 중요도는 다시 생각. "다 같은 검정이 아니다 / 블랙을 즐기는 방법"의 볼륨을 올릴 것. 타겟 - 무신사 기본템만 있는 사람
+- I1 SUPERMARKET에서 배운 것: 매개로 관점 만들기, 상징을 틀로(차양), 현장에서 색 추출, 면지 누끼 패턴, 시간 흐름 편집, 뒤표지 질문, 페이지 수로 위계
+- I2 디자인 컨셉 키워드: ① 다양한 블랙(메인) ② 가까이 보기 ③ 눈만 드러나는 띠 + 보조 케어 라벨
+- I3 기획 관점과 연결, 독자와 행동
+- I4 16p 위계 재구성: 6–11p를 "다 같은 검정이 아니다" 6p 메인으로, 브랜드는 그 안 예시로, YNA ver.2는 매거진 자체로
+
 ## 피드백 / 고민
 - 06 디자인 컨셉 01 · 04 칸은 2024 YNA 이미지로 직접 바꿔 넣었다
 - 스케치 글씨 중 잘 안 읽힌 것: 1p "사진 실루엣?", 6-7p 아래 메모, 16p "재질?" → 08-2에는 읽힌 대로 적었다. 확인 필요
