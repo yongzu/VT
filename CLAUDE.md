@@ -1,3 +1,5 @@
+> **폴더 구조 변경 (2026-11-26):** 이 저장소의 이전 작업은 모두 `previous/` 아래로 옮겨졌습니다. 아래 문서에 나오는 경로는 `previous/` 기준으로 읽으세요. 새 작업은 `WK13/` ~ `WK16/`에서 합니다.
+
 # VT — Visual Translation 작업 컨텍스트
 
 Phi Institute of Design의 **Visual Translation** 수업 과제를 기록하는 저장소다.
